@@ -1,22 +1,22 @@
-# OS- Simulator 2019
+# OS - Simulator 2020
 
 ------
 ## Team Members
 
-Ayush Kumar	        17CO111
+Madhav Walgad	           181CO131
 
-Chaitany Pandiya	  17CO112
+Mayur Bhat	             181CO132
 
-Chethan	            17CO113
+Mohit Patil	             181CO133
 
-Deepak K	          17CO114
+Varun N R	               181CO134
 
-Dhanuesh	          17CO115
+Narayan Pai	             181CO135
 
-Gauri V.Nair	      17CO116
+Niranjan S Yadiyala	     181CO136
 
-Govardhan G D	      17CO117
+Nuthan Kumar S	         181CO137
 
-Hemanth Reddy	      17CO118
+Paranjaya Saxena	       181CO138
 
-K Rahul Reddy	      17CO119
+Pintu	                   181CO139
