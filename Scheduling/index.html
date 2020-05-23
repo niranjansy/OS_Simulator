@@ -1,79 +1,138 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="../os_sim.html">OS simulator</a>
-		</div>
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li class="active"><a href="wiki.html">Wiki</a></li>
-		</ul>
-	</div>
-</nav>
-<br><br><br>
-<style>
-body{
-	background-color: .bg-light;
-	text-align: center;
-}
-.table{
-	width:50%;
-	border: 1px solid grey;
-	margin:0 auto;
-}
-.algorithms{
-	margin: 0 auto;
-}
-ul{
-	list-style-type: none;
-}
-h1{
-	font-style:italic;
-	font-size:2.0em;
-}
-td{
-	font-size: 1.5em;
-}
-</style>
-<body>
-	<h1 align="center">Process Scheduling</h1>
-	<div class="algorithms">
-		<table class="table">
-
-		<td><a href='fcfs.html'>FCFS</a></td>
-	</tr>
-	<tr>
-	<td><a href='srtf.html'>SJF Preemptive</a></td>
-	</tr>
-	<tr>
-		<td><a href='sjf.html'>SJF Non-Preemptive</a></td>
-	</tr>
-	<tr>
-		<td><a href='ljf.html'>Longest Job first</a></td>
-	</tr>
-	<tr>
-		<td><a href='lrtf.html'>Largest Remaining Time first</a></td>
-	</tr>
-	<tr>
-		<td><a href='priority.html'>Priority Preemptive</a></td>
-	</tr>
-	<tr>
-		<td><a href='prioritynonpre.html'>Priority Non-Preemptive</a></td>
-	</tr>
-	<tr>
-		<td><a href='compare.html'>Compare the above algorithms</a></td>
-	</tr>
-	<tr>
-		<td><a href="round-robin.html">Round robin scheduling</a></td>
-	</tr>
-	<tr>
-		<td><a href='hrrn.html'>Highest Response Ratio Next</a></td>
-	</tr>
-</table>
-</div>
-</body>
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        />
+    </head>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="wiki.html">Wiki</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br /><br /><br />
+    <style>
+        body {
+            background-color: .bg-light;
+            text-align: center;
+        }
+        .table {
+            width: 50%;
+            border: 1px solid grey;
+            margin: 0 auto;
+        }
+        .card {
+            font-size: x-large;
+            font-weight: bold;
+            height: 200px;
+        }
+        .card-body {
+            margin-top: 35px;
+        }
+        a,
+        a:hover {
+            color: black;
+        }
+        .container {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    </style>
+    <body>
+        <h1 align="center">Process Scheduling</h1>
+        <div class="container">
+            <a href="compare.html">
+                <div
+                    class="card bg-primary"
+                    style="margin-bottom: 50px; height: 150px;"
+                >
+                    <div class="card-body text-center">
+                        <p class="card-text">COMPARE ALL!!!</p>
+                    </div>
+                </div>
+            </a>
+            <div class="card-columns">
+                <a href="fcfs.html">
+                    <div class="card bg-primary">
+                        <div class="card-body text-center">
+                            <p class="card-text">First Come First Serve</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="srtf.html">
+                    <div class="card bg-warning">
+                        <div class="card-body text-center">
+                            <p class="card-text">
+                                Shortest Job First Preemptive
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="sjf.html">
+                    <div class="card bg-success">
+                        <div class="card-body text-center">
+                            <p class="card-text">
+                                Shortest Job First Non-Preemptive
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="ljf.html">
+                    <div class="card bg-danger">
+                        <div class="card-body text-center">
+                            <p class="card-text">
+                                Longest Job first
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="lrtf.html">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <p class="card-text">
+                                Largest Remaining Time first
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="priority.html">
+                    <div class="card bg-info">
+                        <div class="card-body text-center">
+                            <p class="card-text">Priority Preemptive</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="prioritynonpre.html">
+                    <div class="card bg-primary">
+                        <div class="card-body text-center">
+                            <p class="card-text">Priority Non-Preemptive</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="round-robin.html">
+                    <div class="card bg-warning">
+                        <div class="card-body text-center">
+                            <p class="card-text">
+                                Round robin scheduling
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="hrrn.html">
+                    <div class="card bg-success">
+                        <div class="card-body text-center">
+                            <p class="card-text">Highest Response Ratio Next</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+	</body>
 </html>

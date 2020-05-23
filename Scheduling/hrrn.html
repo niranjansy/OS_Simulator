@@ -184,10 +184,10 @@ $(document).ready(function(){
   }
   else
   {
-    $("#Average").append("<b>The average waiting time of the given processes is "+average_wt+"</b><br>");
-    $("#Average").append("<b>The average turn around time of the given processes is "+average_tat+"</b><br>");
-    $("#Average").append("<b>The throughput of the given processes is "+throughput+"</b><br>");
-    $("#Average").append("<b>The CPU efficiency is "+cpu_efficiency+"%</b><br>");
+    $("#Average").append("<b>Average Waiting Time: "+average_wt+"</b><br>");
+    $("#Average").append("<b>Average Turn Around Time: "+average_tat+"</b><br>");
+    $("#Average").append("<b>Throughput of the processes: "+throughput+"</b><br>");
+    $("#Average").append("<b>CPU efficiency: "+cpu_efficiency+"%</b><br>");
   }
 
 }
@@ -223,7 +223,7 @@ body{
   text-align: center;
 }
 th {
-    background-color: #4CAF50;
+    background-color: rgb(223, 87, 24);
     color: white;
 }
 #b{
@@ -234,7 +234,7 @@ h1{
 }
 .btn{
   border-radius:12px;
-  background-color: #4CAF50;
+  background-color: rgb(223, 87, 24);
   color:white;
 }
 p{
@@ -279,15 +279,13 @@ p{
   <h1>
     Highest Response Ratio Next Scheduling
   </h1>
-  <h2>
-    Gantt Chart
-  </h2>
+  
   <br>
   <div>
-      <h3>Entered Processes:</h3>
+      <h3>Processes</h3>
     <table id="ep" class="table table-bordered" style="width:500px">
       <thead>
-      <th>PNO.</th>
+      <th>Process No.</th>
       <th>Arrival Time </th>
       <th>Burst Time</th>
     </tr>
@@ -310,7 +308,7 @@ p{
   <table id="ptab" class="table table-bordered" style="width:408px">
   <thead>
   <tr id="thead">
-  <th>PNO.</th>
+  <th>Process No.</th>
   <th>Arrival time</th>
   <th>Burst time</th>
   <th>Waiting time</th>
