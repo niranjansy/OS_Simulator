@@ -1,0 +1,21 @@
+/* .container {
+    text-align: center;
+} */
+
+.jumbotron {
+    text-align: center;
+    color: black;
+    background-color: chocolate;
+}
+
+body {
+    font-size: 20px;
+}
+
+.navbar .navbar-brand {
+    padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+}
