@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="home.css">
+        <title>OS Simulator</title>
+    </head>
+    <body>
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about/studentInfo.html">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Concepts
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../concepts/disk_scheduling.html">Disk Scheduling</a>
+                        <a class="dropdown-item" href="../concepts/process_scheduling.html">Process Scheduling</a>
+                        <a class="dropdown-item" href="../concepts/non_contiguous_memory_allocation.html">Non-Contiguous Memory Management</a>
+                        <a class="dropdown-item" href="../concepts/mft_and_mvt.html">MFT and MVT</a>
+                        <a class="dropdown-item" href="..//file_allocation.html">File Allocation</a>
+                        <a class="dropdown-item" href="../concepts/deadlocks.html">Deadlocks</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Project
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#goal-scroll">Goal</a>
+                        <a class="dropdown-item" href="#objectives-scroll">Objectives</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#simulations-scroll">Simulations</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="https://nitk.ac.in">
+                        <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+
+        <!-- Jumbotron -->
+        <div class="container">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>OS Simulator</h1>
+                    <p>By students of NITK CSE Batch 2022</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- OS Logos -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <a id="microsoft" href="https://microsoft.com"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxPplU1F0LUL4qaG9EAWmcEvRvUVx6oQpucfBpDJau4om-WEDX&usqp=CAU" alt=""></a> 
+                </div>
+                <div class="col-sm">
+                    <a id="apple" href="https://apple.com"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///8AAACurq6mpqZNTU3v7++ysrLk5OTV1dW4uLhgYGDS0tL4+PjNzc36+vqDg4OXl5dmZmY8PDx0dHSKiorAwMBISEjl5eUaGhrExMQ3NzePj49CQkKhoaFra2vz8/N5eXkpKSlYWFgSEhIjIyObm5swMDAnJycNDQ3tN1RYAAAEiUlEQVR4nO2c13rbMAxGRct7yXsmXkndvv8TNoqnbMpyY4A/y+8/17nAiWgOAGQUEUIIIYQQQgghhBBCCCGEEEIIIYQQQggRpx4n5TE6CD0aTZMSo+NQopKYI7/QoahQWRkTtOHIXBHgKG2ZDA10POIss4KmhQ5ImvKNoKmgI5Kl/XkraNAhydL+uBPso2OS5f4LmhI6JlHufoOh/QxvZ9GUATooSeoWwbAG6R+bITooSWxj1IzQUQlSsQmaNjosQYY2wSU6KkHsnxAdlSQjm2BQCQybYFAbtnnoY9Q6z9TQQYliEZyjYxKldi8YWPKiGvY0GlnWijo6Imn6Wb/BGh2QOJOMYIg54MWVXzOoU/2Ji+EqrFXwzHGUTuLwfoBH4k2yLAWX3A6RaadRikuN1lNDsdt53+z2s9mi3E/ijv+zT3uc7K/my1X1ccj15fXs+s2w0XUU60+oWlK9g9xZpW49DafriKeb8Uu9+pmIu/E2789TPCyXtjePAja97GhtrR7+dUoVJJLHe2HE5fPva9qz5oRvWUyhRlkqd/OFlUmvMa8mlrpTDu9orzONp2P+R5posyO5M8zr7L1YOZp6gsZ8eJDut1U7BZmh/aKdriC+dGqts8gyhArG+oLYtd9arxYHuUt14bcD+kWPt6Iy9JCCLsYoNiX+3Gb0JTpQwXHogrbeNGHAZSlrNVcUdIPGm7ZgGSxoqXUKgz5V5OXJxIDXhrUFJ2hB9dUeXprqKQviMzQDZUN4fb+rLLhAC0YdZUN8T3Rxivs18CXi4rLDS7yh/aJoXxzlK0CPvQd0BT1o5lsrG+Jr3do7GrSf+mLxG+2nWE47gD4ZflHSNcRvSrWT+R707itvaTz4hsqG0ES+E0N0yTDSL6qh/Wwt96EZaif04Uka9QMwPJOovi9N0II51yTl+EAL6ueD8U17TzUXvgD+rol2nxB+mCo26x0AV3/Vj08eFGZaxTG+CPojttUNt2DD6P6NIGnQ3frKSe8UcEpRfaqBj1P9RgV4usaBIfjRmn5xgK8D3bw5+CEabFuU9gHqyAqouHWjuMCVg7X7Tc7AUhou1osDO9TaP3OmaBJMF5+zYZoC6feeujTEDFT1HtoLoPYT7dz+FageKXeGqIuW6vmoE7Dra87mGlwvpuoF2Qt7mKCj23nQUpSbBQMoqF5I/AabddPu906BCjpIfsMTp8rX8Q36Ezo4JuJr+sqXgYFr4QnlqxfwqyWR8hED+6DCiUlxoD/Gi9dbNFOnvrzfqjZOPWg0PaLVmuHHGE1Rmk/xF0suqOzAN2irDAoJDfz7SVnkH8nAN5lmEb8Khb9keYvwOQpZOMxDtL0dfxHYhuRs489KmEGujQh/ATEHqQYNfItwLo8eqNsm1da0/bUBWtfGvYfJD2+/YEpe2XRQug17nJcwH3j6Gzxh3b8l1tV7bf13oF8WKqZ7O1I/H6zdjdt8a9m3nYyV2rVjUpBoqS2vXtQa+pCVeY7xqDkp90fVp77Ieh4vk6RX/X/0CCGEEEIIIYQQQgghhBBCCCGEEEIIIQTDXw1EQTJa684CAAAAAElFTkSuQmCC" alt=""></a>
+                </div>
+                <div class="col-sm">
+                    <a id="ubuntu" href="https://ubuntu.com"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAh1BMVEX///8AAAD5+fnx8fHm5ubt7e3Kysr19fUjIyPp6elBQUHe3t5VVVWRkZEfHx/j4+OkpKTX19dfX190dHQoKCjAwMCLi4vR0dFtbW2CgoJaWlqpqam3t7dkZGQ5OTmenp6ysrIwMDB6enpKSkoVFRWnp6cNDQ2Dg4NFRUURERGPj49OTk4uLi5jcAYrAAAKiklEQVR4nO2d2WKyOhCAf6AuFRVx3wVrrV3e//lObdkCSWYSEiI9+S5bhYxZZk3y75/FYrFYLBaLxWKxWCwWi8WCI1gsD8PhcLqJQtNN0cJu4OT0Rx3T7VGMe3LKzP6UjN2vioDfvJpuljpGNPm+OZhumCrODAEd59gz3TYlsAV0nMFfELG6xvyxgepzBXSck+kG1qYPSOg8m25hTV4hAZ2p6SbWw52DEjq+6UbWYgEL6JxNN7IWB4SE4zZrjB5CQMdZmW4mAq/z/Nzx3MrfQ5SEIwMtxuGG0en8SaiD/uf5FIWZqBOUhDOTQrDorEZrjqaLk4+xTG6SgVFRKLirj0+gzfPkoxuUhGOj4lRYrC9wm9M+nKEkfDcqEMkK1+S29mFncsTJl/dKq+ZhwHPzKiRfwq2la6OCJbhTEfkc5+n3a23Sh0MxCbu/32qTTQM5siVSv7ZNdiluWUzZJt/aIz77KCaNJyThexLubZV/iFsXUxbJtx7cxyedhbGIhFm7wU58alysnH2fEBHjr+cEybcghWEy1vat4jfEH7YiEmZqnB8vNThGOy/3BhCJPpz+Tkk7kR/zrnrNTeFff1oQE38UMtyG2dfY5rrBvEU254hpIqYxoux7LAN8+88Yu7wVREiaP6fKZOOUkT+cNC4XVRAydSKkMY75JKPlgA2G88nWLIr/EtMYxVHY2xHe5cikGiz93FdiuRPzMcgB4O1H09txMHyLzBpqFeuMUIpiGsM5mNMGTCjeAKEUkZGalMHDVVysaK0sfkBMYzileVwhbLp4KKA2kljWxTTGN1P2ouJ+OE6znezG9EYWF3ZXSGP8sKQrBnd3f9Sx0anKsq0J+xjjt5dZdyvv8pfJT9VkqI09AInJVInpv4/n8Vf/cuUKOYvy0eotloWsR3O2DW2VSWVw6Z+7zXZd38saHnZf1zeOlPFwfZ5NB+U/N7Xa9Hju+Fvxk+ufP31tutRV4nmxAQswSPrNCAj4RsXf+a4x3rg/fCgWmmsmlQ+YnIRSnETw8yJ0lsPJIshacfnrhMx6sHhBS/jVgMqAh5UHP6TMAj0hP9RLVAJhUUsFjXD5NaeBoCKUt76zl3mwX9ENdIbwo2qB8mz7EuP0myVORM2LDW6+SGpmXGDgplaiEhGmCX3pqRKgjHWpSYAF04I6PkAHMxmP6uSpgOnCz1oaq4cRke8r1wLx+rrhd5bnWSSGHyNJt4mX9xAiakvow3UWVwWhhgAyC/UV7j839ONy3M8UTWHwD/DFOzUvgmNYmtKl4HuVBVLA6aBHYcDrjDLPpgNORS3xDDCIrVBNgYp3qe5dGWD4U2mmHUrsXFW+LAEcpAH8DDz0mHoBDcMUMvw38CNEgOaEjjrFgO85KU4rQMr3S+3rEngFhIq7EK7nqPuLen64CsOgVOTBeavyzBBUxllr5fZHL8nC2f88EQsIc3ZoKFkCltMag2ZRitDeioERVtJJQ/AEWNqkgxkhxQcc5gUDLj1ArSWhwJfwIjkvGGHLPI5Nnx7K15k7gMKQq9NgVhXmFcjU30CLSwoMU5mAlMtJ6eVLCSW3NpYLkELwJXyDH1CB67RkiS2K+aapso4fX5dw9IHUQebeVntak0PKb5D4HiEw55KGDqoVCJoC7fyJeBWuOY0hCdOcSK9ioGoqdenw2yM6+RG1IWlXlY03Hc7anR7fJRVVF4hob7qeltcabbvmijP+Mj/ePqfr2eZjNBqdJrsoEuxDVC1hMhO9UhhF23YdP/SfOqqiP6jkXWralPr7MXbNQWByu1m4sGRPKQqT6gW3ATDd1Loj/9wKCZ9QEqYR0dK6G5lsORZEWulOQP10ZLLlWJC19UkMr5Q7iUy2HAuyFjTxkkoStmIeIkepT/10KyQUW2lKY1qbPnQVVrHhtEVqgJa0hbby5Nll/hXHx+NxcHv5HG6nh/XsvFn+Gm37SLCoBaXxU6ezZHprK//glREL+2xCVlsp4KbNt+CfjiLYhyjLO3lm2fLWlVYHchei/iHCe0rDMZWFV5OPz1dh76I+fg0PWNdiyp854kHvGBKQHcXQVPPJH1biKzhYxpLO7GpvX7TES11+cyRS+dhoIuWn1TIRgXkjE/PGRYRpRrqWfRBAVY1M3sLlqP08wkzbMXPVsEkAMLMkMwlMEfNpTS/J0lDyCdTUvEg+FsyuMSwD2fdx4Jts8hsvQsr+lW0hQxozXqi0muYOtLTXWNzKe3SGxWcxZ79y/2INSFjrpIzglCmElwlhc3LSsoo7ESrFqO/PBKtud1W23nl5Z8WdCJ1xoyWh5/KPHFNaaQYaWDpOW/CBk5yULqfQnsQ5/AhxwGN1FAakwDpoLd4M7CMrS5TCB/fpORIELE1W5kSB3rim3V1wCb2isfMGvkjTrSWIszyUmKeI3VV66ndgM8NRMj8QG0q0JZ0R75atp8tBbArSeEYkYlf5vOYAAipMfvhUIw0NTA6uX6sXnxBHZGs9izZGvP9SYz+5j9mkqrELkYnUq7Trhsvx6d3Mjdo0L6uPcecuad6Qj1hOZeeJhzkt2dF/SA2iGXKe4gKzxkg/XQBwQ5KcAe4hrIlfdJkzOeARHRJBMBd97kcj9+gBjrBw0utfb4IcoI7uIyMSgMWG8IMDxglsBZ6WePmaOguLm9YjY2Db78V9z4n4uxGqfiCjqSpInlIk1HGiwacTnzJ0Pf8kdGi00+AFF5wgA6mO83jSeHvercKg03PdXicIu6/nocjgTGjuNFq2j0r4NbvKv6+X8Rg4co+D1mNbSrBCw0Qe0XuXFYWOjv3bbBgLBKHskaciYdF9QFSJDtXNIULtCOuHzXE6O58Pt8KAHjd9Di+t/eQFAqILZcZ5n68ovcUosTCaPxOaoviJlQBZz1lmXXVM/FG/uWMvi1S8YVJbiZyGmPHBOIT2VePBSRzKOoP49auaAmb6cOdBkwUvhOPWk1B6ZvqJDyEikQSGA/NlHu9A7x8Kywmhj5FF1QUe9s7mPOVG2NbCmoKMTXT2y+3gOBieDR+s/4MX/zaRcAuFNUXxSIbejrjkYmnycoQf3J8IC3nkgKimKJzyRglozIzLeA9zEm6hsKbIRehSYyTGbx1fkVYxbmdDgSj7KvOiGdOXQ3jEOBI7wLq4m58dUjzqDyLiEdYU2XrJq/YweB9SBcFbLLGXdjXsHnIQ1hTpCIdSIg+z21hUU2R9E0OffADtf0fs9kMndyphFfMghh0+A5GQriAIZ8SEF0zBnQhd6ZB2DGYTazM3I2BYCCynqbmC+opRqUieR9Qr4igkgQEPFQFv4u4HPD5OyMRvxl3xZdw+LRPsDzHQ5mtijeGMdYP3IDJxg/3blFkk05+mahwXH2/qnhlh3F4YnZaHQSZpf3BYnqKwl3sMyHs9DQpRF+Q9dKabWYO/34ctn4cIcGup0au5a9JSfSiAh7qd5LFsGkHaZpeKg6lc1XJKanMgTO8HcfJlaY2PL08MSah8I27TQAqjzaoigR/EekTPSRheOqDZu3K1wfYwHimoXwtWYL/1y2jOKqYJ2ERxd3NUu/H8mFUaNYiKNcjz0Z+T787T4uOwHQ4Pm33LDTWLxWKxWCwWi8VisVgslv8z/wEDVYet0lbDLgAAAABJRU5ErkJggg==" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <br>
+        
+        <!-- Goal -->
+        <div class="container">
+            <div class="intro">
+                <a id="goal-scroll"></a>
+                <h2>Goal</h2>
+                <p>To demonstrate the working of a typical Operating System by simulating the underlying algorithms</p>
+                </div>
+        </div><br>
+
+        <!-- Objectives -->
+        <div class="container">
+            <div class="intro">
+                <a id="objectives-scroll"></a>
+                <h2>Objectives</h2>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, cupiditate culpa vel, nemo architecto asperiores iure ut harum reiciendis quisquam dolore? Odit suscipit pariatur tenetur explicabo quod dolorum nesciunt sunt?</p> -->
+                <ul>
+                    <li>To explain algorithms related to the following concepts in Operating Systems:
+                        <ol>
+                            <li>Disk Scheduling</li>
+                            <li>Process Scheduling</li>
+                            <li>File Allocation</li>
+                            <li>Memory Allocation</li>
+                            <li>Deadlocks</li>
+                        </ol>
+                    </li><br>
+
+                    <li>To demonstrate the working of the above algorithms through simulation</li>
+                </ul>   
+            </div>
+        </div><br>
+
+        <!-- Simulations -->
+        <div class="container">
+            <div class="intro">
+                <a id="simulations-scroll"></a>
+                <h2>Simulations</h2>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, cupiditate culpa vel, nemo architecto asperiores iure ut harum reiciendis quisquam dolore? Odit suscipit pariatur tenetur explicabo quod dolorum nesciunt sunt?</p> -->
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg">
+                    <form method="get" action="disk/disk_scheduling.html">
+                        <button type="submit" class="btn btn-outline-primary btn-lg">Disk Scheduling</button>
+                    </form>
+                </div>
+                <div class="col-lg">
+                    <form method="get" action="Scheduling/index.html">
+                        <button type="submit" class="btn btn-outline-secondary btn-lg">Process Scheduling</button>
+                    </form>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg">
+                    <form method="get" action="file-allocation/index_page.html">
+                        <button type="submit" class="btn btn-outline-success btn-lg">File Allocation</button>
+                    </form>
+                </div>
+                <div class="col-lg">
+                    <form method="get" action="memory/index.html">
+                        <button type="submit" class="btn btn-outline-danger btn-lg">MFT and MVT</button>
+                    </form>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg">
+                    <form method="get" action="OS-final/index.html">
+                        <button type="submit" class="btn btn-outline-warning btn-lg">Non-Contiguous Memory Allocation</button>
+                    </form>
+                </div>
+                <div class="col-lg">
+                    <form method="get" action="Deadlock/index.html">
+                        <button type="submit" class="btn btn-outline-dark btn-lg">Deadlocks</button>
+                    </form>
+                </div>
+            </div><br>
+        </div>
+    </body>
+</html>

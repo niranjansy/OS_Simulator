@@ -1,0 +1,29 @@
+.jumbotron {
+    text-align: center;
+}
+
+.intro {
+    text-align: left;
+}
+
+.container {
+    text-align: center;
+}
+
+.btn-lg {
+    height: 400px;
+    width: 100%;
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxPplU1F0LUL4qaG9EAWmcEvRvUVx6oQpucfBpDJau4om-WEDX&usqp=CAU"); */
+}
+
+.navbar .navbar-brand {
+    padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+}
+
+body {
+    font-size: 20px;
+}
