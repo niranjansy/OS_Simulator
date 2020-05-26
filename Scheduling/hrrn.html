@@ -284,6 +284,7 @@ p{
   <div>
       <h3>Processes</h3>
     <table id="ep" class="table table-bordered" style="width:500px">
+    <tr>
       <thead>
       <th>Process No.</th>
       <th>Arrival Time </th>
@@ -291,19 +292,24 @@ p{
     </tr>
     <tbody id="ept">
     </tbody>
+    <tr>
+      <th></th>
+      <th>
+        <input type='number' min="0" id='at1' placeholder="arrival time" style="color:black;"></input>
+      </th>
+      <th>
+        <input type='number' min="0" id='bt1' placeholder="burst time " style="color:black;"></input>
+      </th>
+    </tr>
   </thead>
 </table>
   </div>
-  <input type='number' min="0" id='at' placeholder="arrival time"></input>
-  <input type='number' min="0" id='bt' placeholder="burst time"></input>
   <button id="add" class="btn" onclick="AddtoList()">Add</button>
   <br><br>
   <button id="start" class="btn">Start</button>
   <br>
   <br>
-  <div id="outer-div">
-  </div>
-  <br><br><br>
+  <br>
   <div class="panel-content">
   <table id="ptab" class="table table-bordered" style="width:408px">
   <thead>
@@ -320,6 +326,9 @@ p{
   </thead>
   </table>
     </div>
+  <div id="outer-div">
+  </div>
+  <br><br>
     <p id="Average"></p>
 </body>
 </html>

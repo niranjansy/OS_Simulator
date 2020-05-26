@@ -366,19 +366,27 @@ p{
       <h3>Processes</h3>
     <table id="ep" class="table table-bordered" style="width:500px">
       <thead>
+    <tr>
       <th>Process No.</th>
       <th>Arrival Time </th>
       <th>Burst Time  </th>
     </tr>
     <tbody id="ept">
     </tbody>
+    <tr>
+        <th></th>
+        <th>
+          <input type='number' min="0" id='at1' placeholder="arrival time" style="color:black;"></input>
+        </th>
+        <th>
+          <input type='number' min="0" id='bt1' placeholder="burst time " style="color:black;"></input>
+        </th>
+    </tr>
   </thead>
 </table>
   </div>
 
   <br>
-  <input type='number' min="0" id='at1' placeholder="arrival time"></input>
-  <input type='number' min="0" id='bt1' placeholder="burst time "></input>
   <input type='hidden' min="0" id='io' value="0" placeholder="io time"></input>
   <input type='hidden' min="0" id='bt2' value="0" placeholder="burst time 2"></input>
   <button id="add" class="btn" onclick="AddtoList()">Add</button>
