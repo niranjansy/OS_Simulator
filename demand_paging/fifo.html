@@ -2,34 +2,63 @@
 <html>
 <head>
 	<title>FIFO</title>
-	<meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
+</head>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
- <div class="navbar-header">
-  <a class="navbar-brand" href="#">OS simulator</a>
-   </div>
-  <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-     <li class="active"><a href="#">Wiki</a></li>
-   </ul>
-  </div>
-</nav>
-<br><br><br>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="../home/home.html">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../about/studentInfo.html">About</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Concepts
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="../concepts/disk_scheduling.html">Disk Scheduling</a>
+					<a class="dropdown-item" href="../concepts/process_scheduling.html">Process Scheduling</a>
+					<a class="dropdown-item" href="../concepts/demand_paging.html">Demand Paging</a>
+					<a class="dropdown-item" href="../concepts/contiguous_memory_allocation.html">Contiguous Memory Allocation</a>
+					<a class="dropdown-item" href="../concepts/file_allocation.html">File Allocation</a>
+					<a class="dropdown-item" href="../concepts/deadlocks.html">Deadlocks</a>
+				</div>
+			</li>
+		</ul>
+
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="navbar-brand" href="https://nitk.ac.in">
+					<img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png" width = 80 height = 50>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>  
+<!--End of navigation bar-->
+
+<br>
 <div class="page-header" >
-   <h1 style="text-align:center;color:limegreen">PAGE REPLACEMENT ALGORITHM</h1>
+   <h1>PAGE REPLACEMENT ALGORITHM</h1>
 </div>
 <body  style="background-color:white">
-<h1 style="text-align:center;color:limegreen">FIFO</h1>
+<h1 style="text-align:center;color:limegreen">First In First Out (FIFO)</h1>
 <br>
 <form>
     <div class"container">
@@ -40,152 +69,155 @@
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
                 <input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
         </div>
-            <input type = "button" style="margin-left:40px; margin-bottom:20px" class="btn btn-success btn-lg" onclick = "fifo()" value = "Compute">
+        <input type = "button" class="compute_button" onclick = "fifo()" value = "Compute">
 		<div id="div" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
 		<div id="sp1"></div>
 		<div id="sp2"></div>
     </div>
 </form>
  </body>
- <!-- <script type="text/javascript" src="index.js"></script> -->
 </html>
 
 <script>
 	var count=0;
-var pages = [];
-var pf;
-var ph;
-var f;
-var rs;
-var txt;
-function fifo()
-{
- f = document.getElementById("frames").value;
- rs=document.getElementById("rs").value;
-	rs=rs.split(' ');
-console.log(f);
-console.log(rs);
-var prev;
- pf=0;
- ph=0;
-var k=0;
-	var i,row=Number(f)+1,j,col=rs.length;
-
-	pages = new Array(row);
-	for(i=0;i<row;i++)
-		pages[i]=new Array(col);
-
-	for(i=0;i<row-1;i++)
+	var pages = [];
+	var pf;
+	var ph;
+	var f;
+	var rs;
+	var txt;
+	function fifo()
 	{
-    for(j=0 ; j<col;j++)
-		pages[i][j]= "--";
-	}
+		f = document.getElementById("frames").value;
+		rs = document.getElementById("rs").value;
+		rs=rs.split(' ');
+		console.log(f);
+		console.log(rs);
+		var prev;
+		pf=0;
+		ph=0;
+		var k=0;
+		var i,row=Number(f)+1,j,col=rs.length;
 
-	for(j=0;j<col;j++)
-	{
-		var smallest=-1;
-		var flag=false;
-		if(j>0)
-		{
-		for(i=0;i<row-1;i++)
-			pages[i][j]=pages[i][j-1];
-		}
+		pages = new Array(row);
+		for(i=0;i<row;i++)
+			pages[i]=new Array(col);
+
 		for(i=0;i<row-1;i++)
 		{
-			if(rs[k]==pages[i][j])
-			flag=true;
+			for(j=0 ; j<col;j++)
+				pages[i][j]= "--";
 		}
-		if(flag==false)
+
+		for(j=0;j<col;j++)
 		{
+			var smallest=-1;
+			var flag=false;
+			if(j>0)
+			{
+			for(i=0;i<row-1;i++)
+				pages[i][j]=pages[i][j-1];
+			}
 			for(i=0;i<row-1;i++)
 			{
-				if(pages[i][j]== "--")
+				if(rs[k]==pages[i][j])
+				flag=true;
+			}
+			if(flag==false)
+			{
+				for(i=0;i<row-1;i++)
 				{
-					smallest=i;
-					break;
+					if(pages[i][j]== "--")
+					{
+						smallest=i;
+						break;
+					}
+				}
+				if(smallest!=-1)
+				{
+					pages[smallest][j]=rs[k];
+					prev=(smallest+1)%(row-1);
+				}
+				else
+				{
+					pages[prev][j]=rs[k];
+					prev=(prev+1)%(row-1);
+				}
+				pages[row-1][j]="PF";
+				k++;
+				pf++;
+				console.log("pf=",pf);
+			}
+			else
+			{
+				ph++;
+				k++;
+				console.log("ph=",ph);
+				pages[row-1][j]="PH";
+			}
+		}
+		txt= " ";var real;var m=0;
+		var $table=$("<table border='1'></table>");
+		$table.addClass('table table-striped');
+		$tbody = $("<tbody></tbody>");
+		for ( i=0; i<row;i++)
+		{
+			var line =$("<tr></tr>");
+			// line.css({'background-color': getRandomColor()});
+			for(j=0; j<col;j++)
+			{
+				if(i==row-1) 
+				{
+					if(("PH".localeCompare(pages[i][j])==0))
+					{
+						line.append('<td style="color:green">'+'PH'+'</td>');
+					}
+					else
+					{
+						line.append('<td style="color:red">'+'PF'+'</td>');
+					}
+					$tbody.append(line);
+				}
+				else
+				{
+					line.append($("<td></td>").html(pages[i][j]+""));
+					$tbody.append(line);
 				}
 			}
-			if(smallest!=-1)
+		}
+
+		$table.append($tbody);
+		$table.appendTo($("#div"));
+		$("#sp1").html('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf+'</span>'+'</p>')
+		$("#sp2").html('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
+		
+		function getRandomColor() 
+		{
+			m=m+1;
+			var color ='';
+			if(m==1)
 			{
-		    pages[smallest][j]=rs[k];
-			prev=(smallest+1)%(row-1);
+				color='blue';
 			}
-		    else
+			if(m==2)
 			{
-				pages[prev][j]=rs[k];
-				prev=(prev+1)%(row-1);
+				color='yellow';
 			}
-		pages[row-1][j]="PF";
-		k++;
-		pf++;
-		console.log("pf=",pf);
-        }
-		else
-        {
-        ph++;
-        k++;
-		console.log("ph=",ph);
-		pages[row-1][j]="PH";
-        }
+			if(m==3)
+			{
+				color='pink';
+			}
+			if(m==4)
+			{
+				color='white';
+			}
+
+			return color;
+		}
+		console.log(m);
+		txt = txt + "\n";
+		console.log(txt);
+		console.log(txt.length);
+		$('input[type="button"]').attr('disabled','disabled');
 	}
-txt= " ";var real;var m=0;
-var $table=$("<table border='1'></table>");
-$table.addClass('table table-striped');
-$tbody = $("<tbody></tbody>");
-	for ( i=0; i<row;i++)
-	  {
-        var line =$("<tr></tr>");
-        // line.css({'background-color': getRandomColor()});
-	  	for(j=0; j<col;j++){
-
-        if(i==row-1) {
-
-
-                if(("PH".localeCompare(pages[i][j])==0)){
-					line.append('<td style="color:green">'+'PH'+'</td>');
-                }
-                else{
-					line.append('<td style="color:red">'+'PF'+'</td>');
-				}
-
-			$tbody.append(line);
-
-			}
-        else{
-            line.append($("<td></td>").html(pages[i][j]+""));
-            $tbody.append(line);
-        }
-
-
-          }
-        }
-
-      $table.append($tbody);
-	  $table.appendTo($("#div"));
-	  $("#sp1").html('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf+'</span>'+'</p>')
-	  $("#sp2").html('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
-      function getRandomColor() {
-		m=m+1;
-		var color ='';
-		  if(m==1){
-			  color='blue';
-		  }
-		  if(m==2){
-			  color='yellow';
-		  }
-		  if(m==3){
-			  color='pink';
-		  }
-		  if(m==4){
-			  color='white';
-		  }
-
-		return color;
-		 }
-		 console.log(m);
-txt = txt + "\n";
-console.log(txt);
-console.log(txt.length);
-$('input[type="button"]').attr('disabled','disabled');
-}
 </script>

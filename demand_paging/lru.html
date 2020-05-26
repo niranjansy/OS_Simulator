@@ -2,34 +2,66 @@
 <html>
 <head>
 	<title>LRU</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-	</head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</head>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="../home/home.html">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../about/studentInfo.html">About</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Concepts
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="../concepts/disk_scheduling.html">Disk Scheduling</a>
+					<a class="dropdown-item" href="../concepts/process_scheduling.html">Process Scheduling</a>
+					<a class="dropdown-item" href="../concepts/demand_paging.html">Demand Paging</a>
+					<a class="dropdown-item" href="../concepts/contiguous_memory_allocation.html">Contiguous Memory Allocation</a>
+					<a class="dropdown-item" href="../concepts/file_allocation.html">File Allocation</a>
+					<a class="dropdown-item" href="../concepts/deadlocks.html">Deadlocks</a>
+				</div>
+			</li>
+		</ul>
+
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="navbar-brand" href="https://nitk.ac.in">
+					<img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png" width = 80 height = 50>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>  
+<!--End of navigation bar-->
+
+<br>
+<div class="page-header" >
+   <h1>PAGE REPLACEMENT ALGORITHM</h1>
+</div>
 <body  style="background-color:white">
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-	   <div class="navbar-header">
-		<a class="navbar-brand" href="#">OS simulator</a>
-		 </div>
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="index.html">Home</a></li>
-		   <li class="active"><a href="#">Wiki</a></li>
-		 </ul>
-		</div>
-	  </nav>
-	  <br><br><br>
-	  <div class="page-header" >
-		 <h1 style="text-align:center;color:limegreen">PAGE REPLACEMENT ALGORITHM</h1>
-
-	  </div>
-	  <body>
-			<h1 style="text-align:center;color:limegreen"> LRU</h1>
-	  <br>
+<h1 style="text-align:center;color:limegreen">Least Recently Used (LRU)</h1>
 <br>
 <form>
-    <div class"container" >
+    <div class"container">
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
             <input type = "number" id="frames"class="form-control" placeholder="Enter the number of frames:">
         </div>
@@ -37,14 +69,13 @@
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
                 <input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
         </div>
-            <input type = "button" style="margin-left:70px; margin-bottom:20px" class="btn btn-success btn-lg" onclick = "lru()" value = "Compute">
-		<div id="div1" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
+        <input type = "button" class="compute_button" onclick = "lru()" value = "Compute">
+		<div id="div" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
 		<div id="sp1"></div>
 		<div id="sp2"></div>
     </div>
 </form>
  </body>
- <!-- <script type="text/javascript" src="index.js"></script> -->
 </html>
 
 <script>

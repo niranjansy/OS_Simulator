@@ -5,68 +5,12 @@
         <title>Demand Paging</title>
         <!-- CSS only -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="concepts.css">
+        <link rel="stylesheet" href="style.css">
         <!-- JS, Popper.js, and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-
-		<!--<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>-->
-
-
-		
-		<style>
-
-			.button {
-				font-weight: bold;
-				margin-left: 400px;
-				margin-top: 20px;
-				text-align: center;
-				border-radius: 4px;
-				background-color: blue;
-				border: none;
-				color: #FFFFFF;
-				text-align: center;
-				font-size: 28px;
-				padding: 20px;
-				width: 700px;
-				transition: all 0.5s;
-				cursor: pointer;
-			}
-
-			.but1{
-
-				position:absolute;
-				margin-top:2px;
-			}
-
-			.but2{
-
-				position:absolute;
-				margin-top:7%;
-			}
-
-			.but3{
-				position:absolute;
-
-				margin-top:14%;
-			}
-
-
-			.but4{
-
-				position:absolute;
-				margin-top:21%;
-			}
-
-			.c{
-				margin-left: 42%;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -109,19 +53,18 @@
             </div>
         </nav>  
         <!--End of navigation bar-->
-		
-		<br><br><br>
+
 		<div class="page-header" >
- 			<h1 style="text-align: center;color:black">Simulation of Demand Paging Through<br> <b><span style = "color:red">PAGE REPLACEMENT</span></b> </h1>
+ 			<h1>Simulation of Demand Paging Through<br> <b><span style = "color:red">PAGE REPLACEMENT</span></b> </h1>
 	 		<!-- <span style="text-align:center;color:black;position:absolute;margin-left:33%">PAGING</span></h1>  -->
 
 		</div>
 		<br>
 
 		<div>
-			<button class="button" onclick="change(0)"><span>First In First Out Page Replacement </span></button>
+			<button class="button" onclick="change(0)"><span>First In First Out (FIFO) Page Replacement </span></button>
 			<br>
-			<button class="button" onclick="change(1)"><span>Least Recently Used Page Replacement </span></button>
+			<button class="button" onclick="change(1)"><span>Least Recently Used (LRU) Page Replacement </span></button>
 			<br>
 			<button class="button" onclick="change(2)"><span>Optimal Page Replacement </span></button>
 			<br>
