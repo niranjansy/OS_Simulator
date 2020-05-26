@@ -83,6 +83,34 @@
   color: rgb(133, 133, 133);
 }
 
+.caption{
+  position:absolute;
+  left:0;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:white;
+  font-size:35px;
+  letter-spacing: 10px;
+
+}
+
+.bgimg-1 {
+    position:relative;
+    background-image: url(./pics/mem.jpg);
+    height: 50%;
+}
+
+
+.navbar .navbar-brand {
+    padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+}
+
+
 </style>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -98,38 +126,71 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./mm_wiki.html">Wiki</a>
-          </li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../home/home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../about/studentInfo.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Concepts
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../concepts/disk_scheduling.html">Disk Scheduling</a>
+                    <a class="dropdown-item" href="../concepts/process_scheduling.html">Process Scheduling</a>
+                    <a class="dropdown-item" href="../concepts/demand_paging.html">Demand Paging</a>
+                    <a class="dropdown-item" href="../concepts/contiguous_memory_allocation.html">Contiguous Memory Allocation</a>
+                    <a class="dropdown-item" href="../concepts/file_allocation.html">File Allocation</a>
+                    <a class="dropdown-item" href="../concepts/deadlocks.html">Deadlocks</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Project
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#goal-scroll">Goal</a>
+                    <a class="dropdown-item" href="#objectives-scroll">Objectives</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#simulations-scroll">Simulations</a>
+                </div>
+            </li>
         </ul>
-      </nav>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="navbar-brand" href="https://nitk.ac.in">
+                    <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png">
+                </a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+
       <br><br><br>
 
-<p class="heading">MFT</p>
 
-<p class="choose">Choose any one</p>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="bgimg-1">
+          <div class="caption">
+            <div class="centered" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"><h1 class="display-3" style="color:white;background:rgba(1,1,1,0.5);text-align:center"><b>Fixed Partition Scheme</b></h1></div>
+          </div>
+  </div>
+        <div class="card-body">
+          <h1 style="color:#0e8f96" class="card-title">Pick your choice</h1>
+          <a class="btn btn-outline-dark btn-lg btn-block" href="./mft/ff/ff.html" role="button">First fit</a>
+          <a class="btn btn-outline-info btn-lg btn-block" href="./mft/bf/bf.html" role="button">Best fit</a>
+          <a class="btn btn-outline-dark btn-lg btn-block" href="./mft/wf/wf.html" role="button">Worst fit</a>
+        </div>
+      </div>
 
-<div class="container btn-row">
-    <div class="row">
-        <div class="col-md-3">
-            <button class="button" onclick="window.location.href='./mft/ff/ff.html'"><span>First Fit</span></button>
-        </div>
-        <div class="col-md-3">
-            <button class="button" onclick="window.location.href='./mft/bf/bf.html'"><span>Best Fit</span></button>
-        </div>
-        <div class="col-md-3">
-            <button class="button" onclick="window.location.href='./mft/wf/wf.html'"><span>Worst Fit</span></button>
-        </div>
-        <div class="col-md-3">
-            <button class="button" onclick="window.location.href='./mft/nf/nf.html'"><span>Next Fit</span></button>
-        </div>
-    </div>    
-</div>
+
 </body>
 </html>

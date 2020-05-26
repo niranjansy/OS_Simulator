@@ -41,7 +41,7 @@
                         </div>
                     </li>
                 </ul>
-    
+
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="navbar-brand" href="https://nitk.ac.in">
@@ -50,6 +50,142 @@
                     </li>
                 </ul>
             </div>
-        </nav>  
+        </nav>
+
+
+
+        <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-1">Contiguous Memory Allocation</h1>
+      <hr>
+      <p style="font-size:1.5em">
+        In this allocation technique, each process is contained in a single contiguous block of memory.
+        Memory is divided into several partitions. Each partition contains exactly one process.
+        When a partition is free, a process is selected from the input queue and loaded into it.
+        The number of partitions could either be fixed or variable.
+      </p>
+    </div>
+
+    <br><br><br>
+    <div class="container">
+      <h1 class="display-3">Fixed Partition scheme</h1>
+      <hr>
+      <p style="font-size:1.5em">
+        The size of eeach partition in memory is fixed but size of each partition may differ from each other.
+        The list of partitions is made once and never changes later.A process may be loaded into a partition of equal or greater size and is confined to its allocated partition.
+      </p>
+      <br>
+      <br>
+      <div>
+        <h1 class="display-4">Advantages</h1>
+        <div >
+          <ul>
+            <li>
+  <div >
+    <h5 style="font-size:2.0em">Easy to implement</h5>
+  </div>
+  <p style="font-size:1.3em">Algorithms needed to implement Fixed Partitioning are easy to implement.
+    It simply requires putting a process into certain partition without focussing on the emergence of Internal and External Fragmentation.</p>
+
+</li>
+<li>
+  <div>
+    <h5 style="font-size:2.0em">Less OS overhead</h5>
+  </div>
+  <p style="font-size:1.3em">Processing of Fixed Partitioning require lesser excess and indirect computational power.</p>
+</li>
+</div>
+      </div>
+
+<br><br>
+
+      <h1 class="display-4">Disadvantages</h1>
+      <div >
+        <ul>
+          <li>
+<div >
+  <h5 style="font-size:2.0em">Internal Fragmentation</h5>
+</div>
+<p style="font-size:1.3em">Main memory use is inefficient. Any program, no matter how small, occupies an entire partition. This can cause internal fragmentation.</p>
+
+</li>
+<li>
+<div>
+  <h5 style="font-size:2.0em">Limit process size</h5>
+</div>
+<p style="font-size:1.3em">Process of size greater than size of partition in Main Memory cannot be accommodated.
+  Partition size cannot be varied according to the size of incoming process’s size.</p>
+</li>
+<li>
+<div>
+  <h5 style="font-size:2.0em">Limitation on Degree of Multiprogramming</h5>
+</div>
+<p style="font-size:1.3em">Number of processes loaded into the main memory is limited to the number of partitions.</p>
+</li>
+</div>
+    </div>
+
+
+
+
+    <br><br><br>
+    <div class="container">
+      <h1 class="display-3">Variable Partition scheme</h1>
+      <hr>
+      <p style="font-size:1.5em">
+        Initially memory is empty and partitions are made during the run-time according to process’s need instead of partitioning during system configure.
+        The size of partition will be equal to incoming process.
+        Number of partitions is not fixed and depends on the number of incoming process and Main Memory’s size.
+
+      <br>
+      <br>
+      <div>
+        <h1 class="display-4">Advantages</h1>
+        <div >
+          <ul>
+            <li>
+  <div >
+    <h5 style="font-size:2.0em">No Internal Fragmentation</h5>
+  </div>
+  <p style="font-size:1.3em">In variable Partitioning, space in main memory is allocated strictly according to the need of process,
+     hence there is no case of internal fragmentation. There will be no unused space left in the partition.</p>
+
+</li>
+<li>
+  <div>
+    <h5 style="font-size:2.0em">No restriction on Degree of Multiprogramming</h5>
+  </div>
+  <p style="font-size:1.3em">More number of processes can be accommodated due to absence of internal fragmentation. A process can be loaded until the memory is empty.</p>
+</li>
+</div>
+      </div>
+
+
+<br><br>
+      <h1 class="display-4">Disadvantages</h1>
+      <div >
+        <ul>
+          <li>
+<div >
+  <h5 style="font-size:2.0em">Difficult Implementation</h5>
+</div>
+<p style="font-size:1.3em">Implementing variable Partitioning is difficult as compared to Fixed Partitioning as it involves allocation of memory during run-time rather than during system configure.
+</p>
+
+</li>
+<li>
+<div>
+  <h5 style="font-size:2.0em">External Fragmentation</h5>
+</div>
+<p style="font-size:1.3em">There will be external fragmentation inspite of absence of internal fragmentation.
+
+</p>
+</li>
+
+</div>
+</div>
+    </div>
+  </div>
+ 
     </body>
 </html>
