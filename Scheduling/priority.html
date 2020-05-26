@@ -4,26 +4,19 @@
   <title>
   Priority Pre-emptive Scheduling
   </title>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="concepts.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">OS simulator</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li class="active"><a href="wiki.html">Wiki</a></li>
-    </ul>
-  </div>
-</nav>
-<br><br><br>
+<br>
 
 <script>
   /*FCFS SCHEDULING*/
@@ -335,6 +328,48 @@ p{
 }
 </style>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../home/home.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../about/studentInfo.html">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Concepts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../concepts/disk_scheduling.html">Disk Scheduling</a>
+            <a class="dropdown-item" href="../concepts/process_scheduling.html">Process Scheduling</a>
+            <a class="dropdown-item" href="../concepts/demand_paging.html">Demand Paging</a>
+            <a class="dropdown-item" href="../concepts/contiguous_memory_allocation.html">Contiguous Memory Allocation</a>
+            <a class="dropdown-item" href="../concepts/file_allocation.html">File Allocation</a>
+            <a class="dropdown-item" href="../concepts/deadlocks.html">Deadlocks</a>
+          </div>
+        </li>
+      </ul>
+  
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="navbar-brand" href="https://nitk.ac.in">
+            <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png" width=80 height=50>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--End of navigation bar-->
+
+
   <br>
   <h1>
     Priority Preemptive Scheduling
