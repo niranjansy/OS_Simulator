@@ -1,0 +1,56 @@
+.page-header{
+	text-align: center;
+}
+
+#d1{
+	width: 100%;
+	margin-left:10px;
+	text-align:left;
+}
+
+.btn{
+	padding-top: 10px;
+	background-color: black;
+    font-size: 150%;
+    border-radius: 8px;
+    font-weight: bold;
+    height: 50px;
+    width: 150px;
+}
+
+.btn:hover{
+	padding-top: 5px;
+	background-color: white;
+	border: 5px solid black;
+	font-weight: bold;
+}
+
+.d2{
+	float:left;
+	margin-right:20px;
+}
+
+#totalres{
+	width: 50px;
+	float:left;
+	margin-right:30px;
+}
+
+#totalpros{
+	width: 50px;
+	float:left;
+	margin-right:30px;
+}
+
+#allocated{
+	margin-left:10px;
+}
+
+#need{
+	margin-left:110px;
+}
+
+#run{
+	text-align: center;
+}
+

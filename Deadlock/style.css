@@ -1,0 +1,39 @@
+.container{
+	height: 800px;
+	position: relative;
+	text-align: center;
+}
+
+.center{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+.btn{
+	padding-top: 80px;
+	background-color: black;
+    font-size: 40px;
+    border-radius: 8px;
+    font-weight: bold;
+    height: 200px;
+    width: 400px;
+}
+
+.btn:hover{
+	background-color: white;
+	border: 5px solid black;
+	font-weight: bold;
+}
+
+h1{
+	font-weight: bold;
+}
+
+body{
+	font-family: Lucida, sans-serif;
+	background-color: white;
+}
