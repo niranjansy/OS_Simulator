@@ -37,3 +37,11 @@ body{
 	font-family: Lucida, sans-serif;
 	background-color: white;
 }
+
+.navbar .navbar-brand {
+    padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+}
