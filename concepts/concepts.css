@@ -9,3 +9,14 @@
 body {
     font-size: 20px;
 }
+
+h1.page_title
+{
+    text-align: center;
+}
+
+div.Content
+{
+    margin: 50px;
+    text-align: justify;
+}
