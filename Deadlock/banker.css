@@ -85,3 +85,11 @@ body{
 .run{
 	text-align:center;
 }
+
+.navbar .navbar-brand {
+    padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+}
