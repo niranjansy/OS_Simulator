@@ -1,206 +1,134 @@
 <html>
 	<head>
-	</head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demand Paging</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="concepts.css">
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>-->
+
+
+		
 		<style>
 
-			body{
-
-
+			.button {
+				font-weight: bold;
+				margin-left: 400px;
+				margin-top: 20px;
+				text-align: center;
+				border-radius: 4px;
+				background-color: blue;
+				border: none;
+				color: #FFFFFF;
+				text-align: center;
+				font-size: 28px;
+				padding: 20px;
+				width: 700px;
+				transition: all 0.5s;
+				cursor: pointer;
 			}
 
-			.button1 {
-			  border-radius: 4px;
-			  background-color: #ff652f;
-			  border: none;
-			  color: #FFFFFF;
-			  text-align: center;
-			  font-size: 28px;
-			  padding: 20px;
-			  width: 200px;
-			  transition: all 0.5s;
-			  cursor: pointer;
-			  margin: 5px;
+			.but1{
+
+				position:absolute;
+				margin-top:2px;
 			}
 
-			.button1 span {
-			  cursor: pointer;
-			  display: inline-block;
-			  position: relative;
-			  transition: 0.5s;
+			.but2{
+
+				position:absolute;
+				margin-top:7%;
 			}
 
-			.button1 span:after {
-			  content: '\00bb';
-			  position: absolute;
-			  opacity: 0;
-			  top: 0;
-			  right: -20px;
-			  transition: 0.5s;
-			}
+			.but3{
+				position:absolute;
 
-			.button1:hover span {
-
-			  padding-right: 25px;
-			}
-
-			.button1:hover{
-				background: linear-gradient(to right, #ff652f 16%, #ffe400 100%);
-			}
-			.button1:hover span:after {
-			  opacity: 1;
-			  right: 0;
+				margin-top:14%;
 			}
 
 
-			/*=====2=========================== style 2 ========================================*/
-			.button2 {
-    position: relative;
-    font-size: 28px;
-    color: #FFFFFF;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-}
+			.but4{
 
-.button2:after {
-    content: "";
-    background: #90EE90;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.9s
-}
+				position:absolute;
+				margin-top:21%;
+			}
 
-.button2:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s;
-    background-color: green;
-}
-
-.back{
-	background-color: green;
-	border-radius: 4px;
-	border: none;
-	color: #FFFFFF;
-	text-align: center;
-	font-size: 28px;
-	padding: 20px;
-	width: 200px;
-	transition: all 0.5s;
-	cursor: pointer;
-	margin: 5px;
-}
-
-.but1{
-
-	position:absolute;
-	margin-top:2px;
-}
-
-.but2{
-
-	position:absolute;
-	margin-top:7%;
-}
-
-.but3{
-	position:absolute;
-
-	margin-top:14%;
-}
-
-
-.but4{
-
-	position:absolute;
-	margin-top:21%;
-}
-
-.but5{
-
-	position:absolute;
-
-	margin-top:28%;
-}
-
-.but6{
-	position: absolute;
-
-	margin-top: 5%;
-}
-
-.but7{
-
-	position:absolute;
-
-	margin-top:14%;
-}
-
-.but8{
-	position:absolute;
-
-	margin-top:23%;
-}
-
-
-.but9{
-
-	position:absolute;
-
-	margin-top:35%;
-}
-.c{
-	margin-left: 42%;
-}
+			.c{
+				margin-left: 42%;
+			}
 		</style>
+	</head>
 
 	<body>
-			<nav class="navbar navbar-inverse navbar-fixed-top">
-					<div class="container-fluid">
-				   <div class="navbar-header">
-					<a class="navbar-brand" href="#">OS simulator</a>
-					 </div>
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="../os_sim.html">Home</a></li>
-					 </ul>
-					</div>
-				  </nav>
-				  <br><br><br>
-				  <div class="page-header" >
- <h1 style="text-align: center;color:black">PAGE REPLACEMENT
-	 <!-- <span style="text-align:center;color:black;position:absolute;margin-left:33%">PAGING</span></h1>  -->
 
-				  </div>
-				  <body>
+		<!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../home/home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about/studentInfo.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Concepts
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../concepts/disk_scheduling.html">Disk Scheduling</a>
+                            <a class="dropdown-item" href="../concepts/process_scheduling.html">Process Scheduling</a>
+                            <a class="dropdown-item" href="../concepts/demand_paging.html">Demand Paging</a>
+                            <a class="dropdown-item" href="../concepts/contiguous_memory_allocation.html">Contiguous Memory Allocation</a>
+                            <a class="dropdown-item" href="../concepts/file_allocation.html">File Allocation</a>
+                            <a class="dropdown-item" href="../concepts/deadlocks.html">Deadlocks</a>
+                        </div>
+                    </li>
+                </ul>
+    
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="navbar-brand" href="https://nitk.ac.in">
+                            <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png" width = 80 height = 50>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>  
+        <!--End of navigation bar-->
+		
+		<br><br><br>
+		<div class="page-header" >
+ 			<h1 style="text-align: center;color:black">Simulation of Demand Paging Through<br> <b><span style = "color:red">PAGE REPLACEMENT</span></b> </h1>
+	 		<!-- <span style="text-align:center;color:black;position:absolute;margin-left:33%">PAGING</span></h1>  -->
 
-				  <br>
+		</div>
+		<br>
 
-<div class="c">
-		<button class="button1 button2 but1" onclick="change(0)"><span>FIFO </span></button>
-		<button class="button1 button2 but2" onclick="change(1)"><span>LRU </span></button>
-		<button class="button1 button2 but3" onclick="change(2)"><span>ALL </span></button>
-		<button class="button1 button2 but4" onclick="change(3)"><span>OPTIMAL </span></button>
-		<button class="button1 button2 but5" onclick="change(4)"><span>BELADY </span></button>
-	<!-- 	<button class="button1 button2 but6" onclick="change(5)"><span>PAGING </span></button>
-		<button class="button1 button2 but7" onclick="change(6)"><span>MULTI </span></button>
-		<button class="button1 button2 but8" onclick="change(7)"><span>OPTI-SIZE </span></button>
-		 -->
-		<button class="button1 button2 but9" onclick="change(5)"><span>SECOND</span></button>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div>
+		<div>
+			<button class="button" onclick="change(0)"><span>First In First Out Page Replacement </span></button>
+			<br>
+			<button class="button" onclick="change(1)"><span>Least Recently Used Page Replacement </span></button>
+			<br>
+			<button class="button" onclick="change(3)"><span>Optimal Page Replacement </span></button>
+			<br>
+			<button class="button" onclick="change(5)"><span>Second Chance (Clock) Page Replacement</span></button>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+
 	</body>
 
 	<script>
@@ -221,34 +149,14 @@
 
 			if(but_num == 2)
 			{
-				window.location = "all.html";
+				window.location = "optimal.html";
 			}
 
 			if(but_num == 3)
 			{
-				window.location = "optimal.html";
+				window.location = "second.html";
 			}
 
-			if(but_num == 4)
-			{
-				window.location = "belady.html";
-			}
-			// if(but_num == 5)
-			// {
-			// 	window.location = "paging.html";
-			// }
-			// if(but_num == 6)
-			// {
-			// 	window.location = "mlp.html";
-			// }
-			// if(but_num == 7)
-			// {
-			// 	window.location = "ops.html";
-			// }
-			if(but_num == 5)
-			{
-				window.location = "sc.html";
-			}
 		}
 	</script>
 </html>
