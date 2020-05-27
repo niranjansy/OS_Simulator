@@ -20,3 +20,24 @@ Nuthan Kumar S	         181CO137
 Paranjaya Saxena	       181CO138
 
 Pintu	                   181CO139
+
+------
+## Simulator Info
+
+This aplication demonstrates the working of a typical Operating System by simulating the following algorithms, along with their theoretical explanations : 
+1. Disk Scheduling
+2. Process Scheduling
+3. File Allocation
+4. Contiguous Memory Allocation
+5. Demand Paging
+6. Deadlocks
+7. Process Synchronization
+
+------
+
+## Directions of Use
+
+* To enter into the home page of this simulator, open the `home.html` file within the `home` folder. 
+* To simulate the above mentioned algorithms, scroll down the home page and click on the button corresponding to the desired algorithm. 
+* The `Concepts` tab on the navigation bar has a dropdown list of the above algorithms, which lead to pages containing the theoretical explanations of each algorithm. 
+* The `About` tab on the navigation bar contains information about the developers of this application.
