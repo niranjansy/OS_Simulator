@@ -198,7 +198,7 @@ var index=-9999;
 		for ( i=0; i<row;i++)
 		  {
 			var line =$("<tr></tr>");
-			// line.css({'background-color': rgba(255, 99, 71, 0.5)});
+			line.css({'background-color': getRandomColor()});
 			  for(j=0; j<col;j++){
 
 			if(i==row-1) {
@@ -224,7 +224,7 @@ var index=-9999;
 			}
 
 		  $table.append($tbody);
-		  $table.appendTo($("#div1"));
+		  $table.appendTo($("#div"));
 		  $("#sp1").html('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf+'</span>'+'</p>')
 		  $("#sp2").html('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
 		  function getRandomColor() {
