@@ -1,12 +1,26 @@
 var x=2,max_val;
 function myFunction() {
     x=x+1;
-    var h1 = document.getElementsByTagName("input")[x];
-    var att = document.createAttribute("class");
-    att.value = "tdm-abc";
-    h1.setAttributeNode(att);
+    // var h1 = document.getElementsByTagName("input")[x];
+    // var att = document.createAttribute("class");
+    // att.value = "tdm-abc";
+	// h1.setAttributeNode(att);
+	// (document.getElementById("input-hide")[x]) = "block";
+	document.getElementsByTagName("input")[x].style.display = "block";
 }
 
+function createNewElement() {
+	// First create a DIV element.
+	x = x + 1;
+	var txtNewInputBox = document.createElement('div');
+
+    // Then add the content (a new input box) of the element.
+	txtNewInputBox.innerHTML = "<input type='text' id='newInputBox'>";
+	txtNewInputBox.innerHTML = "<input type='number' min='0' class='form-control' id='exampleNumber1' placeholder='Enter Request'><br>"
+
+    // Finally put it where it is supposed to appear.
+	document.getElementById("newElementId").appendChild(txtNewInputBox);
+}
 
 var fcfs=0,sstf=0,scan=0,cscan=0,look=0,clook=0;
 
@@ -147,6 +161,8 @@ function optchecked(option)
 
 function calculate()
 {
+	document.getElementById("show-button-show").style.display = "block";
+	
 	var min = parseInt(document.getElementsByTagName("input")[1].value);
 	var max = parseInt(document.getElementsByTagName("input")[2].value);
 
@@ -169,22 +185,25 @@ function calculate()
 	cscanv = calculate_cscan();
 
 	lookv = calculate_look();
+
 	clookv = calculate_clook();
 
     var f = document.getElementById("s_graph");
     var att = document.createAttribute("class");
     att.value = "s_show";
     f.setAttributeNode(att);
-    show_graph(fcfsv,sstfv,scanv,cscanv,lookv,clookv);
+	show_graph(fcfsv,sstfv,scanv,cscanv,lookv,clookv);
 }
 
 function show_graph_section(){
-	var f = document.getElementById("graph_section");
-	var att = document.createAttribute("class");
+	// var f = document.getElementById("graph_section");
+	// var att = document.createAttribute("class");
 
-	att.value = "s_show";		//s_show is not defined
-	f.setAttributeNode(att);
+	// att.value = "s_show";		//s_show is not defined
+	// f.setAttributeNode(att);
+	document.getElementById("graph_section").style.display = "block";
 }
+
 var dp_fcfs = []; var dp_sstf = [];  var dp_scan = []; var dp_cscan = []; var dp_look = [];  var dp_clook = [];
 var fcfs_values=[]; var sstf_values=[]; var scan_values = []; var cscan_values=[]; var look_values = []; var clook_values = [];
 
@@ -374,6 +393,8 @@ function calculate_sstf()
 
 		//sort the inputs
 		in_arr.sort(function(a, b){return a - b});
+
+		console.log[in_arr];
 
 		sum = sum + (max - head);
 
@@ -797,7 +818,7 @@ function calculate_sstf()
     	zingchart.render({
         id:"chartContainer_fcfs",
         output:"svg",
-        height:500,
+        height:750,
         width:"80%",
         data:{
             "type":"line",
@@ -829,8 +850,8 @@ function calculate_sstf()
 		zingchart.render({
         id:"chartContainer_sstf",
         output:"svg",
-        height:500,
-        width:"80%",
+        height:750,
+		width:"80%",
         data:{
             "type":"line",
             "title":{
@@ -849,7 +870,7 @@ function calculate_sstf()
 		zingchart.render({
         id:"chartContainer_scan",
         output:"svg",
-        height:500,
+        height:750,
         width:"80%",
         data:{
             "type":"line",
@@ -869,7 +890,7 @@ function calculate_sstf()
 		zingchart.render({
         id:"chartContainer_cscan",
         output:"svg",
-        height:500,
+        height:750,
         width:"80%",
         data:{
             "type":"line",
@@ -889,7 +910,7 @@ function calculate_sstf()
 		zingchart.render({
         id:"chartContainer_look",
         output:"svg",
-        height:500,
+        height:750,
         width:"80%",
         data:{
             "type":"line",
@@ -909,7 +930,7 @@ function calculate_sstf()
 		zingchart.render({
         id:"chartContainer_clook",
         output:"svg",
-        height:500,
+        height:750,
         width:"80%",
         data:{
             "type":"line",

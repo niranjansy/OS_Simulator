@@ -1,164 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <head> -->
-	<meta charset="utf-8"/>	<!-- dont remove this -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<link rel="stylesheet" href="disk_scheduling.css">
-	<!-- JS, Popper.js, and jQuery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Scheduling</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="disk_scheduling_new.css">
+    <!-- <link rel="stylesheet" href="disk_scheduling.css"> -->
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="disk_scheduling.js"></script>
-	<!-- <link rel="stylesheet" href="../home/home.css"> -->
-	<!-- for zing chart js -->
-	<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="disk_scheduling.js"></script>
+    <!-- Zing Charts -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
 	<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
 </head>
-	<body>
-		<!-- A grey horizontal navbar that becomes vertical on small screens -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="../home/home.html">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../about/studentInfo.html">About</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Concepts
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="../concepts/disk_scheduling.html">Disk Scheduling</a>
-							<a class="dropdown-item" href="../concepts/process_scheduling.html">Process Scheduling</a>
-							<a class="dropdown-item" href="../concepts/demand_paging.html">Demand Paging</a>
-							<a class="dropdown-item" href="../concepts/contiguous_memory_allocation.html">Contiguous Memory Allocation</a>
-							<a class="dropdown-item" href="../concepts/file_allocation.html">File Allocation</a>
-							<a class="dropdown-item" href="../concepts/deadlocks.html">Deadlocks</a>
-							<a class="dropdown-item" href="../concepts/syncronization.html">Process Synchronization</a>                        
-						</div>
-					</li>
-				</ul>
-	
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="navbar-brand" href="https://nitk.ac.in">
-							<img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png">
-						</a>
-					</li>
-				</ul>
-			</div>
-			</nav>
-	
-		<!-- Jumbotron -->
-        <div class="container">
-            <div class="jumbotron">
-                <div class="container">
-                    <h1><b>Disk Scheduling</b></h1>
-                    <p>Comparison of different Disk Scheduling Algorithms</p>
-                </div>
+<body>
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../home/home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about/studentInfo.html">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Concepts
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../concepts/disk_scheduling.html">Disk Scheduling</a>
+                        <a class="dropdown-item" href="../concepts/process_scheduling.html">Process Scheduling</a>
+                        <a class="dropdown-item" href="../concepts/demand_paging.html">Demand Paging</a>
+                        <a class="dropdown-item" href="../concepts/contiguous_memory_allocation.html">Contiguous Memory Allocation</a>
+                        <a class="dropdown-item" href="../concepts/file_allocation.html">File Allocation</a>
+                        <a class="dropdown-item" href="../concepts/deadlocks.html">Deadlocks</a>
+                        <a class="dropdown-item" href="../concepts/syncronization.html">Process Synchronization</a>                        
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="https://nitk.ac.in">
+                        <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container">
+                <h1><b>Disk Scheduling</b></h1>
+                <p>Comparison of different Disk Scheduling Algorithms</p>
             </div>
         </div>
+    </div>
 
-			<!--<div class="options">-->
-				<!--<h2  style="font-variant:small-caps;margin-left:40%"">Choose the algorithms</h2>-->
-				<!--<button class="button button1" onclick="optchecked(0)" style="margin-top:3%;margin-left: 5%">F C F S</button>-->
-				<!--<button class="button button2" onclick="optchecked(1)" style="margin-top:9%;position: absolute;">S S T F</button>-->
-				<!--<button class="button button3" onclick="optchecked(2)" style="margin-left:18%;">S C A N</button>-->
-				<!--<button class="button button4" onclick="optchecked(3)" style="margin-top:9%;position: absolute;">C S C A N</button>-->
-				<!--<button class="button button5" onclick="optchecked(4)" style="margin-left:18%;">L O O K</button>-->
-				<!--<button class="button button6" onclick="optchecked(5)" style="margin-top:9%;position: absolute;">C L O O K</button>-->
-			<!--</div>-->
+    <div class="container">
+        <img src="https://www.gatevidyalay.com/wp-content/uploads/2018/11/FCFS-Disk-Scheduling-Algorithm-Problem-01.png" alt="">
+    </div>
 
-			<div style="margin-top:10%;height:300px;color:black">
-			<div style="margin-top:5%;position:absolute;margin-left:10%;">
-				<h4 style="font-weight: bold">Enter the following details</h4>
-				<div style="margin-top:8% ;position: absolute;width: 300px;"><label>HEAD</label><input class="tdm-head" type="number" min="0"></div>
-				<br>
-				<div style="margin-left: 200%;margin-top: -20% ;position: absolute;width:300px;">
-					<h4>Enter the first and last cylinder number</h4>
-				<label>FIRST </label><input class="tdm-head" type="number" min="0"><br>
-				</div >
-				<div style="margin-left: 400%;margin-top: -0% ;position: absolute;width:300px;">
-				<label>LAST </label>
-				<input class="tdm-head" type="number" min="0"><br>
-				</div>
-				<button class="tdm-button" onclick="myFunction()" style="margin-top: 50%;position: absolute;">Add Request</button><br>
-				<button class="tdm-button" onclick="calculate()" style="margin-left: 300%;position:absolute;margin-top:41%"> Calculate </button>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <input type="number" min="0" class="form-control" id="exampleNumber1" aria-describedby="numberHelp" placeholder="Enter Initial Head Position">
+            </div>
+
+            <div class="col-sm">
+                <input type="number" min="0" class="form-control" id="exampleNumber1" aria-describedby="numberHelp" placeholder="Enter First Cylinder">
+            </div>
+
+            <div class="col-sm">
+                <input type="number" min="0" class="form-control" id="exampleNumber1" aria-describedby="numberHelp" placeholder="Enter Last Cylinder">
+            </div>
+        </div><br>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg">
+                <div id="dynamicCheck">
+                    <!-- <input type="button" value="Create Element" onclick="createNewElement();"/> -->
+                    <button class="btn btn-primary btn-block" onclick="createNewElement()" value="Create Element">Add New Cylinder Request</button><br>
+                </div>
 			</div>
-		</div>
 
-			<input id="tdm-input" class="tdm-hide" type="number" min="0" style="position: absolute;margin-top:10%;left:0%;margin-left:5px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:19%;margin-left:15px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:29%;margin-left:15px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:39%;margin-left:15px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:49%;margin-left:15px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:59%;margin-left:15px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:69%;margin-left:15px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:79%;margin-left:15px;">
-			<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:89%;margin-left:15px;">
-		</div>
+            <div class="col-lg">
+                <button class="btn btn-primary btn-block" onclick="calculate()"> Calculate </button>
+			</div>
+        </div><br>
+    </div>
 
+    <!-- <div> -->
+        <!-- <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
+        <input class="input-hide" id="new-request" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;"> -->
+    <!-- </div> -->
+    
+    <!-- <div class="container">
+        <input type="number" class="form-control" id="input-hide" aria-describedby="numberHelp" placeholder="Enter Request">
+        <input type="number" class="form-control" id="input-hide" aria-describedby="numberHelp" placeholder="Enter Request">
+        <input type="number" class="form-control" id="input-hide" aria-describedby="numberHelp" placeholder="Enter Request">
+        <input type="number" class="form-control" id="input-hide" aria-describedby="numberHelp" placeholder="Enter Request">
+        <input type="number" class="form-control" id="input-hide" aria-describedby="numberHelp" placeholder="Enter Request">
+        <input type="number" class="form-control" id="input-hide" aria-describedby="numberHelp" placeholder="Enter Request">
+        <input type="number" class="form-control" id="input-hide" aria-describedby="numberHelp" placeholder="Enter Request">
+        <input type="number" class="form-control" id="input-hide" aria-describedby="numberHelp" placeholder="Enter Request">
+    </div> -->
 
-	<div class="tdm-footer">
-		<br><br>
-		<p id="output_fcfs"></p>
-		<p id="output_sstf"></p>
-		<p id="output_scan"></p>
-		<p id="output_cscan"></p>
-		<p id="output_look"></p>
-		<p id="output_clook"></p>
-	</div>
-	<p id="output"></p>
-	<div id="chartContainer" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 20%"></div>
+    <div class="container">
+        <div id="newElementId">
+            Requests:
+        </div>
+    </div>
 
-	<div class="tdm-hide" id="s_graph">
-		<button class="but_show_graph" onclick="show_graph_section()" style="width: 160px;height:60px;"> Show Header Movement</button>
-	</div>
-	<!-- modal buttons -->
-	<br><br>
-	<div class="tdm-hide" id="graph_section">
-		<h2 style="margin-left: 43%;margin-bottom: 3%;"> HEADER MOVEMENT </h2>
-		<button onclick="fcfsModal()" class=" w3-button trigger-btn graph1" data-toggle="modal" style="text-decoration:none;">FCFS</button>
-		<button onclick="sstfModal()" class=" w3-button trigger-btn graph2" data-toggle="modal" style="text-decoration:none;">SSTF</button>
-		<button onclick="scanModal()" class=" w3-button trigger-btn graph3" data-toggle="modal" style="text-decoration:none;">SCAN</button>
-		<!--//<button onclick="cscanModal()" class=" w3-button trigger-btn graph4" data-toggle="modal" style="text-decoration:none;">CSCAN</button>-->
-		<button onclick="lookModal()" class=" w3-button trigger-btn graph5" data-toggle="modal" style="text-decoration:none;">LOOK</button>
-		<!--<button onclick="clookModal()" class=" w3-button trigger-btn graph6" data-toggle="modal" style="text-decoration:none;">CLOOK</button>-->
-		<h4 style="font-weight: bold;margin-top:7%;margin-left: 40%;"> X-axis: Request Track Number</h4>
-		<h4 style="font-weight: bold;margin-top:10px;margin-left: 40%;">Y-axis: Request Number</h4>
-	</div>
+    <div class="container" id="show-button-show">
+        <div class="row">
+            <div class="col-xl">
+                <button class="btn btn-warning btn-block" onclick="show_graph_section()"> Show Movement of Head</button>
+            </div>
+        </div>
+    </div>
 
-	<div id="chartContainer_fcfs" style="height: 400px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
+    
+    
+    <!-- modal buttons -->
+    
+    <br><br>
+    <div class="container">
+        <div class="tdm-hide" id="graph_section">
+            <h2> HEADER MOVEMENT </h2>
+
+            <br><br>
+            <div class="row">
+                <div class="col-lg">
+                    <button class="btn btn-success btn-block" onclick="fcfsModal()" data-toggle="modal">FCFS</button>
+                </div>
+    
+                <div class="col-lg">
+                    <button class="btn btn-success btn-block" onclick="sstfModal()" data-toggle="modal">SSTF</button>
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-lg">
+                    <button class="btn btn-success btn-block" onclick="scanModal()" data-toggle="modal">SCAN</button>
+                </div>
+    
+                <div class="col-lg">
+                    <button class="btn btn-success btn-block" onclick="lookModal()" data-toggle="modal">LOOK</button>
+                </div>
+            </div><br>
+            
+            <h4 style="font-weight: bold;margin-top:7%;margin-left: 40%;"> X-axis: Cylinder Number</h4>
+            <h4 style="font-weight: bold;margin-top:10px;margin-left: 40%;">Y-axis: Request Number</h4>
+        </div>
+    </div>
+
+	<!-- <div id="chartContainer_fcfs" style="height: 400px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
 	<div id="chartContainer_sstf" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
 	<div id="chartContainer_scan" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
-	<div id="chartContainer_cscan" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
-	<div id="chartContainer_look" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
-	<div id="chartContainer_clook" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
+    <div id="chartContainer_look" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div> -->
+    
+    <div id="chartContainer_fcfs"></div>
+    <div id="chartContainer_sstf"></div>
+    <div id="chartContainer_scan"></div>
+    <div id="chartContainer_look"></div>
 
 	<p id="input_fcfs"></p>
-		<p id="input_sstf"></p>
-		<p id="input_scan"></p>
-		<p id="input_cscan"></p>
-		<p id="input_look"></p>
-		<p id="input_clook"></p>
-	</body>
-
-	<script>
-
-
-	</script>
-
+	<p id="input_sstf"></p>
+	<p id="input_scan"></p>
+	<p id="input_look"></p>
+    
+    <br>
+    <br>
+</body>
 </html>
