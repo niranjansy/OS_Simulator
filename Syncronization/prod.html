@@ -5,11 +5,14 @@
 <!--   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<<<<<<< HEAD
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+=======
+>>>>>>> f2842be63157541b743d3085a893ca1d16d73527
    <!-- CSS only -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <!-- <link rel="stylesheet" href="home.css"> -->
@@ -17,8 +20,36 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<<<<<<< HEAD
+=======
+<style>
+
+@keyframes FadeOut {
+  0% {
+    /* position: absolute; */
+    opacity: 0;
+  }
+
+  75% {
+    /* position: absolute; */
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.heading{
+opacity: 1;
+  animation-name: FadeOut;
+  animation-duration: 5s;
+
+  }
+  </style>
+
+>>>>>>> f2842be63157541b743d3085a893ca1d16d73527
 </head>
-<body style="background-color:#FFE4B5;height:1500px">
+<body style="background-color:#f0ffff;height:1000px font:apple-system" class="heading ">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,7 +92,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="navbar-brand" href="https://nitk.ac.in">
-                        <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png">
+                         <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png" style="height: 50px;">
                     </a>
                 </li>
             </ul>
@@ -69,48 +100,12 @@
         </nav>
 
 
- <br><br><br>
-  <div class="page-header" >
-
-    <h1 style="background-color:#CCCC00;float:center"><marquee><b>Producer Consumer</b></marquee> </h1>      
+ <div class="page-header container"  >
+    <h1 style="background-color:#E6E6FA;float:center;text-align: center; font-size:40px;"><b>Producer Consumer</b></h1>      
   </div>
 
-  <div>
-      <form>
-        <textarea id="doc" style="height:40%;width:15%;position:absolute;left:3%;font-size:17px; color :black; background-color:#BDB76B  ;border:solid 2px black; " disabled="">
-while(1)
-  {
-      /* produce an item in next_produced */
 
-      while (counter==BUFFER_SIZE)
-        ; /* do nothing */
-
-      buffer[in] = next_produced;
-      in = (in + 1) % BUFFER_SIZE;
-      counter++;
-  }
-        </textarea>
-      </form>
-    </div>
-
-    <div>
-      <form>
-        <textarea id="doc" style="height:40%;width:15%;position:absolute;right:3%;font-size:17px;color : black; background-color:#BDB76B ;border:solid 2px black; " disabled="">
- while(1)
-  {
-      while(counter == 0)
-        ; /* do nothing */
-
-      next_consumed = buffer[out];
-      out = (out+1) % BUFFER_SIZE;
-      counter--;
-
-      /* consume an item in next_consumed */
-  }
-        </textarea>
-      </form>
-    </div>
-
+  
 
 
 
@@ -123,7 +118,7 @@ while(1)
 
 
 
-<button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:25%;left:63%;border:solid 4px black;font-size:17px">Press on Produce </button>
+<button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:25%;left:60%;border:solid 4px black;font-size:17px">Press on Produce </button>
 <button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:25%;left:20%;border:solid 4px black;font-size:17px">Buffer size:5 </button>
 
 <button type = "button", id ="one", name = "one", style="height:100px;width:165px;position:absolute;border:solid 4px black;top:50%;left:45%;background-color:white"> </button>
