@@ -731,3 +731,15 @@ perspective effects (not including the modals and the overlay).
 @media screen and (max-width: 32em) {
 	body { font-size: 75%; }
 }
+
+input[type="number"], textarea {
+  background-color : #d1d1d1; 
+}
+
+.navbar .navbar-brand {
+    padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+}
