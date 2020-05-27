@@ -1,0 +1,385 @@
+.tdm-abc {
+    display: block;
+}
+
+.tdm-hide{
+display:none;
+}
+
+.tdm-heading{
+	color:#5CDB95;
+	margin-left: 34%;
+	font-size: 33px;
+}
+
+.tdm-choices
+{
+	background-color: #19181a;
+	color:white;
+	font-weight:bold;
+}
+
+.tdm-button{
+	width:200px;
+	height:50px	;
+	border:solid 2px black;
+	border-radius:8px;
+	margin-top:3px;
+	margin-bottom: 20px;
+	margin-left:40%;
+	color:white;
+	font-weight: bold;
+	font-family: "courier new", Times, serif;
+	font-size: 18px;
+	background: linear-gradient(to top right, #84ceeb 0%, #8860d0 100%);
+}
+.tdm-footer{
+	margin-left: 30%;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button3 {
+    background-color: white;
+    color: #05386b;
+    border: 2px solid red;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button3:hover {
+    background-color: red;
+    color: white;
+}
+
+.button4 {
+    background-color: white;
+    color: #05386b;
+    border: 2px solid #5cdb95;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button4:hover {background-color: #5cdb95;
+				color:#05386b;}
+
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.button6 {
+	background-color: white;
+	color: black;
+	border: 2px solid orange;
+	padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button6:hover {
+	background-color: orange;
+	color:white;
+}
+
+
+.button-checked1{
+	background-color: #4CAF50;
+    color: white;
+    border: 2px solid #4CAF50;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-checked2{
+	background-color: #008CBA;
+    color: white;
+    border: 2px solid #008CBA;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-checked4{
+	background-color: #5cdb95;
+    color: #05386b;
+    border: 2px solid #5cdb95;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-checked3{
+	background-color: red;
+    color: white;
+    border: 2px solid red;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-checked5{
+	background-color: #555555;
+    color: white;
+    border: 2px solid #555555;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-checked6{
+	background-color: orange;
+    color: white;
+    border: 2px solid orange;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#tdm-input{
+	width:120px;
+	height: 35px;
+	border:solid 2px #65ccb8;
+	border-radius: 5px;
+}
+
+.tdm-head{
+	border:solid 2px white;
+	border-bottom: solid 2px powderblue;
+	border-radius:0px;
+}
+
+body{
+	 font-family: "Times New Roman", Times, serif;
+	 animation-name: FadeOut;
+	 animation-duration: 2s;
+}
+h2{
+	font-family: "impact", Times, serif;
+}
+
+.options button{
+	font-family: "courier new", Times, serif;
+	font-size:20px;
+	font-weight: bold;
+}
+
+@keyframes FadeOut{
+	0% {
+    /* position: absolute; */
+    opacity: 0;
+  }
+
+  75% {
+    /* position: absolute; */
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.graph1{
+margin-left:7%;
+position:relative;
+width:100px;
+height:40px;
+background-color: #4CAF50;
+color: white;
+border-radius:solid 2px #008CBA;
+}
+
+.graph2{
+margin-left:8%;
+position:relative;
+width:100px;
+height:40px;
+background-color: #008CBA;
+color: white;
+border:solid 2px #008CBA;
+}
+
+.graph3{
+margin-left:8%;
+position:relative;
+width:100px;
+height:40px;
+background-color: red;
+color: white;
+border:solid 2px red;
+}
+
+.graph4{
+margin-left:8%;
+position:relative;
+width:100px;
+height:40px;
+background-color: #5cdb95;
+color: #05386b;
+border-radius: solid 2px #5cdb95;
+}
+
+.graph5{
+margin-left:8%;
+position:relative;
+width:100px;
+height:40px;
+background-color: #555555;
+color: white;
+border: solid 2px #555555;
+}
+
+.graph6{
+
+margin-left:8%;
+position:relative;
+width:100px;
+height:40px;
+background-color: orange;
+color: white;
+border:solid 2px orange;
+}
+
+.but_show_graph{
+	background-color: #ff652f;
+	border:solid 2px #ff652f;
+	color:white;
+	font-weight: bold;
+	margin-left: 20%;
+	margin-top: 5%;
+	border-radius: 8px;
+
+color: white;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.intro {
+    text-align: left;
+}
+
+.container {
+    text-align: center;
+}
+
+.btn-lg {
+    height: 400px;
+    width: 100%;
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxPplU1F0LUL4qaG9EAWmcEvRvUVx6oQpucfBpDJau4om-WEDX&usqp=CAU"); */
+}
+
+.navbar .navbar-brand {
+    padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+}
+
+body {
+    font-size: 20px;
+}
