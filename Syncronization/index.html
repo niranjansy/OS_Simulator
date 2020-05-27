@@ -1,156 +1,71 @@
 <html>
 	<head>
-	</head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
        <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
-
+<meta charset="UTF-8">
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="home.css">
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        </head>
 		<style>
 
 			body{
 				font-family: "courier new", Times, serif;	
-				background-color: #E6E6FA;
+				background-color: #f0ffff;
+				/*background-color: #E6E6FA;*/
 			}
 
-			.button1 {
-			  border-radius: 70px;
-			  background-color: #8B008B;
-			  border:solid 4px black;
-			  color: #FFFFFF;
-			  text-align: center;
-			  font-size: 25px;
-			  padding: 20px
-
-			  width: 20px;
-			  transition: all 0.5s;
-			  cursor: pointer;
-			  margin: 5px;
-			}
-
-			.button1 span {
-			  cursor: pointer;
-			  display: inline-block;
-			  position: relative;
-			  transition: 0.5s;
-			}
-
-			.button1 span:after {
-			  content: '\00bb';
-			  position: absolute;
-			  opacity: 0;
-			  top: 0;
-			  right: -20px;
-			  transition: 0.5s;
-			}
-
-			.button1:hover span {
-
-			  padding-right: 25px;
-			}
-
-			.button1:hover{
-				background: linear-gradient(to right, #EE82EE 16%, #E6E6FA 100%);
-			}
-			.button1:hover span:after {
-			  opacity: 1;
-			  right: 0;
-			}
-
-
-			/*=====2=========================== style 2 ========================================*/
-			.button2 {
-    position: relative;
-    font-size: 28px;
-    color: #FFFFFF;
-    padding: 20px;
-    width: 300px;
-    height:150px;
-    text-align: center;
-    -webkit-transition-duration: 0.2s; /* Safari */
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.button2:after {
-    content: "";
-    background: #90EE90;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.9s
-}
-
-.button2:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s;
-    background-color: green;
-}
-
-.back{
-	background-color: green;
-	border-radius: 4px;
-	border: none;
-	color: #FFFFFF;
+h1{
 	text-align: center;
-	font-size: 28px;
-	padding: 20px;
-	width: 200px;
-	transition: all 0.5s;
-	cursor: pointer;
-	margin: 5px;	
 }
 
-.but1{
-	
-	position:absolute;
-	margin-left:28%;
-	margin-top:5%;
-}
-
-.but2{
-	
-	position:absolute;
-	margin-left:58%;
-	margin-top:5%;
-}
-
-.but3{
-	position:absolute;
-	margin-left:43%;
-	margin-top:20%;
-}
-
-
-.but4{
-	
-	position:absolute;
-	margin-left:28%;
-	margin-top:25%;
-}
-
-.but5{
-	
-	position:absolute;
-	margin-left:58%;
-	margin-top:25%;
-}
 		</style>		
-
+	
 	<body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../concepts.html">Concepts</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mission
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="prod.html">Producer-Consumer</a>
+                <a class="dropdown-item" href="dining.html">Dining Philosopher</a>
+                <a class="dropdown-item" href="sleeping.html">Reader-Writer</a>
+                <a class="dropdown-item" href="Barrier.html">Barrier Semaphore</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
 
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+        
+        </nav>
+
+
+<!-- 		<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">OS simulator</a>
@@ -160,16 +75,21 @@
       <li class="active"><a href="wiki.html">Wiki</a></li>
     </ul>
   </div>
-</nav>
-		<h1 style="margin-top: 5%; background-color:#DDA0DD;color:#4B0082"> <marquee><b>Syncronisation</b></marquee> </h1>
-
-		<button class="button1 button2 but1" onclick="change(0)"><span>Producer-consumer </span></button>
-		<button class="button1 button2 but2" onclick="change(1)"><span>Dining-Philosopher</span></button>
+</nav> -->   
+<div class="container">
+		<h1 style="margin-top: 5%; background-color:#c6e1e3;color:#4B0082;text-align:center;"> <b>Syncronisation</b> </h1>
+		<button type="submit" class="btn btn-outline-primary btn-lg" onclick="change(0)">Producer-consumer</button>
+		<!-- <button class="button1 button2 but1" onclick="change(0)"><span>Producer-consumer </span></button> -->
+		<button type="submit" class="btn btn-outline-secondary btn-lg" onclick="change(1)">Dining-Philosopher</button>
+		<button type="submit" class="btn btn-outline-success btn-lg" onclick="change(3)">Reader-Writer</button>
+		<button type="submit" class="btn btn-outline-danger btn-lg" onclick="change(2)">Barrier Semaphore</button>
+		<!-- <button class="button1 button2 but2" onclick="change(1)"><span>Dining-Philosopher</span></button>
 		<button class="button1 button2 but4" onclick="change(3)"><span>Reader-Writer </span></button>
 		<button class="button1 button2 but5" onclick="change(2)"><span>Barrier Semaphore</span></button>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+		 --><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		 </div>
 	</body>
+	
 
 	<script>
 		function change(but_num){
