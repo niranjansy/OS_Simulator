@@ -5,11 +5,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="home.css"> -->
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<style>
 
+@keyframes FadeOut {
+  0% {
+    /* position: absolute; */
+    opacity: 0;
+  }
+
+  75% {
+    /* position: absolute; */
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.heading{
+opacity: 1;
+  animation-name: FadeOut;
+  animation-duration: 5s;
+
+  }
+  </style>
 </head>
-<body style="background-color:#FFE4B5;height:1500px">
+<body style="background-color:#f0ffff;height:1000px font:apple-system" class="heading ">
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +81,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="navbar-brand" href="https://nitk.ac.in">
-                        <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png">
+                         <img src="https://www.noticebard.com/wp-content/uploads/2020/01/NITK-Surathkal.png" style="height: 50px;">
                     </a>
                 </li>
             </ul>
@@ -61,45 +89,12 @@
         </nav>
 
 
- <br><br><br>
-  <div class="page-header" >
-    <h1 style="background-color:#CCCC00;float:center"><marquee><b>Sleeping Barber</b></marquee></h1>      
+ <div class="page-header container"  >
+    <h1 style="background-color:#E6E6FA;float:center;text-align: center; font-size:40px;"><b>Sleeping Barber</b></h1>      
   </div>
 
-  <div>
-      <form>
-        <textarea id="doc" style="height:32%;width:15%;position:absolute;left:3%;font-size:17px; color : black; background-color:#BDB76B ;border:solid 2px black; " disabled="">
 
-def Barber():
-  while true:                  
-    wait(custReady)            
-    wait(accessWRSeats)         
-    numberOfFreeWRSeats += 1    
-    signal(barberReady)        
-    signal(accessWRSeats)       
-    # (Cut hair here.
-        </textarea>
-      </form>
-    </div>
-
-    <div>
-      <form>
-        <textarea id="doc" style="height:32%;width:15%;position:absolute;right:3%;font-size:17px;color : black; background-color:#BDB76B ;border:solid 2px black; " disabled="">
-def Customer():
-    wait(accessWRSeats)         
-    if numberOfFreeWRSeats > 0:
-      numberOfFreeWRSeats -= 1 
-      signal(custReady)        
-      signal(accessWRSeats)    
-      wait(barberReady)        
-      # (Have hair cut here.)
-    else:                       
-          signal(accessWRSeats)    
-      # (Leave without a haircut.)
-        </textarea>
-      </form>
-    </div>
-
+  
     <button type = "button", id ="room", name = "room", style="height:50%;width:58%;position:absolute;top:45%;border:solid 4px black;left:19%;background-color:     #DCDCDC"> </button>
 
 
@@ -107,37 +102,37 @@ def Customer():
 
 
 
-<img src="http://icons.iconarchive.com/icons/icons8/ios7/512/Hair-Barbers-Chair-icon.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:23%; "  id="chair">
+<img src="https://banner2.cleanpng.com/20180511/tbw/kisspng-barber-chair-cosmetologist-furniture-5af602fe0f1861.1308693015260720620618.jpg" style="position: absolute;height: 100px;width: 100px; top: 60%;left:23%; "  id="chair">
 
-<img src="http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png" style="position: absolute;height: 80px;width: 80px; top: 57%;left:24%; visibility: hidden;"  id="cust">
+<img src="https://www.shareicon.net/data/512x512/2016/07/26/802043_man_512x512.png" style="position: absolute;height: 80px;width: 80px; top: 57%;left:24%; visibility: hidden;"  id="cust">
 
 
-     <img src="http://icons.iconarchive.com/icons/martin-berube/people/128/chef-icon.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:27%; visibility: hidden;"  id="barber">
+     <img src="https://www.seekpng.com/png/full/62-625734_barber-pole-pictures-barber-clipart-with-transparent-background.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:27%; visibility: hidden;"  id="barber">
   
 
 
 
 
-<img src="http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png" style="position: absolute;height: 100px;width: 100px; top: 97%;left:35%; visibility: hidden;"  id="one">
+<img src="https://www.shareicon.net/data/512x512/2016/07/26/802043_man_512x512.png" style="position: absolute;height: 100px;width: 100px; top: 97%;left:35%; visibility: hidden;"  id="one">
 
 
-<img src="http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png" style="position:absolute;height: 100px;width: 100px; top: 97%;left:40%;visibility: hidden;  "  id="two">
+<img src="https://www.shareicon.net/data/512x512/2016/07/26/802043_man_512x512.png" style="position:absolute;height: 100px;width: 100px; top: 97%;left:40%;visibility: hidden;  "  id="two">
 
 
-<img src="http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png" style="position:absolute;height: 100px;width: 100px; top: 97%;left:45%; visibility: hidden;"  id="three">
+<img src="https://www.shareicon.net/data/512x512/2016/07/26/802043_man_512x512.png" style="position:absolute;height: 100px;width: 100px; top: 97%;left:45%; visibility: hidden;"  id="three">
 
 
-<img src="http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png" style="position:absolute;height: 100px;width: 100px; top: 97%;left:50%;visibility: hidden; "  id="four">
+<img src="https://www.shareicon.net/data/512x512/2016/07/26/802043_man_512x512.png" style="position:absolute;height: 100px;width: 100px; top: 97%;left:50%;visibility: hidden; "  id="four">
 
 
-<img src="http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png" style="position: absolute;height:  100px;width: 100px; top: 97%;left:55%; visibility: hidden;"  id="five">
+<img src="https://www.shareicon.net/data/512x512/2016/07/26/802043_man_512x512.png" style="position: absolute;height:  100px;width: 100px; top: 97%;left:55%; visibility: hidden;"  id="five">
 
 
 
 
-
-    <button class="btn btn-primary" id ="prod", type ="button", onclick ="produce()", style ="height:10%;width:13%;position:absolute;top:20%;left:25%;border:solid 4px black;font-size:25px">Enter</button>
-    <button class="btn btn-primary" id ="con", type ="button", onclick ="exit()", style ="height:10%;width:13%;position:absolute;top:20%;left:55%;border:solid 4px black;font-size:25px" disabled>Exit</button>
+    
+    <button class="btn btn-primary" id ="prod", type ="button", onclick ="produce()", style ="height:10%;width:13%;position:absolute;top:25%;left:25%;border:solid 4px black;font-size:25px">Enter</button>
+    <button class="btn btn-primary" id ="con", type ="button", onclick ="exit()", style ="height:10%;width:13%;position:absolute;top:25%;left:55%;border:solid 4px black;font-size:25px" disabled>Exit</button>
 
     <button class="btn btn-warning" id ="count", type ="button" style ="height:6%;width:13%;position:absolute;top:33%;border:solid 4px black;color:black;left:55%;">waiting = 0</button>
 
@@ -152,9 +147,10 @@ def Customer():
 
 
 
-<img src="http://icons.iconarchive.com/icons/dunedhel/hinode/128/futon-icon.png" style="position: absolute;height: 300px;width: 200px; top: 60%;left:64%; "  id="bed">
+<img src="https://www.pngkey.com/png/full/54-545725_full-mattress-queen-bed-top-view-architecture-cutout.png" style="position: absolute;height: 300px;width: 200px; top: 50%;left:60%; "  id="bed">
 
-<img src="http://icons.iconarchive.com/icons/martin-berube/people/128/chef-icon.png" style="position: absolute;height: 100px;width: 100px; top: 70%;left:66.5%; "  id="Sleep">
+<img src="https://www.seekpng.com/png/full/62-625734_barber-pole-pictures-barber-clipart-with-transparent-background.png" style="position: absolute;height: 100px;width: 100px; top: 70%;left:66.5%; "  id="Sleep">
+
 
 
     <script type = "text/javascript">
