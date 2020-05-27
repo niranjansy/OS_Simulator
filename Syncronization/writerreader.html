@@ -98,55 +98,7 @@ opacity: 1;
 
 
    
-<div>
-      <form>
-        <textarea id="doc" style="height:50%;width:15%;position:absolute;left:3%;font-size:17px; color : black; background-color:#BDB76B;border:solid 2px black; " disabled="">
-void reader(){
-   while(1){
-     wait(z);
-      wait(rsem);
-       wait(x);
-        readcount++;
-        if (readcount==1) 
-             wait(wsem);
-       signal(x);
-      signal(rsem);
-     signal(z);
-     doReading();
-     wait(x);
-        readcount--;
-        if (readcount==0)
-             signal(wsem);
-     signal(x);
-   }
-}
-        </textarea>
-      </form>
-    </div>
 
-    <div>
-      <form>
-        <textarea id="doc" style="height:50%;width:15%;position:absolute;right:3%;font-size:17px;color : black; background-color:#BDB76B;border:solid 2px black; " disabled="">
-void writer(){
-  while(1){
-      wait(y);
-        writecount++;
-        if (writecount==1) 
-             wait(rsem);
-      signal(y);
-      wait(wsem);
-      doWriting();
-      signal(wsem);
-      wait(y);
-        writecount--;
-        if (writecount==0)
-             signal(rsem);
-      signal(y);
-   }
-}
-        </textarea>
-      </form>
-    </div>
 
 
 
@@ -175,34 +127,34 @@ void writer(){
       </form>
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/super-vista-general/128/administrator-icon.png" style="position: absolute;height: 100px;width: 100px; top: 100%;left:25%; visibility: hidden;"  id="read11">
+<img src="https://img.icons8.com/bubbles/2x/man-with-beard-in-suit.png" style="position: absolute;height: 100px;width: 100px; top: 100%;left:25%; visibility: hidden;"  id="read11">
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/super-vista-general/128/administrator-icon.png" style="position: absolute;height: 100px;width: 100px; top: 100%;left:38%; visibility: hidden;"  id="read12">
+<img src="https://img.icons8.com/bubbles/2x/man-with-beard-in-suit.png" style="position: absolute;height: 100px;width: 100px; top: 100%;left:38%; visibility: hidden;"  id="read12">
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/super-vista-general/128/administrator-icon.png" style="position: absolute;height: 100px;width: 100px; top: 100%;left:50%; visibility: hidden;"  id="read13">
+<img src="https://img.icons8.com/bubbles/2x/man-with-beard-in-suit.png" style="position: absolute;height: 100px;width: 100px; top: 100%;left:50%; visibility: hidden;"  id="read13">
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/super-vista-general/128/administrator-icon.png" style="position: absolute; height: 100px;width: 100px; top: 100%;left:62%; visibility: hidden;"  id="read14">
+<img src="https://img.icons8.com/bubbles/2x/man-with-beard-in-suit.png" style="position: absolute; height: 100px;width: 100px; top: 100%;left:62%; visibility: hidden;"  id="read14">
 
 
 </div>
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/super-vista-general/128/administrator-icon.png" style="position: absolute;height: 100px;width: 100px; top: 70%;left:22%; visibility: hidden; "  id="read1">
+<img src="https://img.icons8.com/bubbles/2x/man-with-beard-in-suit.png" style="position: absolute;height: 100px;width: 100px; top: 70%;left:22%; visibility: hidden; "  id="read1">
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/super-vista-general/128/administrator-icon.png" style="position: absolute;height: 100px;width: 100px; top: 40%;left:22%; visibility: hidden; "  id="read2">
+<img src="https://img.icons8.com/bubbles/2x/man-with-beard-in-suit.png" style="position: absolute;height: 100px;width: 100px; top: 40%;left:22%; visibility: hidden; "  id="read2">
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/super-vista-general/128/administrator-icon.png" style="position: absolute;height: 100px;width: 100px; top: 50%;left:22%;visibility: hidden;  "  id="read3">
+<img src="https://img.icons8.com/bubbles/2x/man-with-beard-in-suit.png" style="position: absolute;height: 100px;width: 100px; top: 50%;left:22%;visibility: hidden;  "  id="read3">
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/super-vista-general/128/administrator-icon.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:22%; visibility: hidden; "  id="read4">
+<img src="https://img.icons8.com/bubbles/2x/man-with-beard-in-suit.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:22%; visibility: hidden; "  id="read4">
 
 
-<img src="http://icons.iconarchive.com/icons/iconshock/windows-7-general/64/administrator-icon.png" style="position: absolute;height: 100px;width: 100px; top: 50%;left:72%;visibility: hidden; "  id="writer1">
+<img src="https://lh3.googleusercontent.com/proxy/ZlrtEsA_TcfrO0Thnk9HOlNzd7drwhasp3sR4-gp6-R942m7ZYURs2hZLQZ311Zmzh68ZEn01NWK_1NpAagOnouS9hfD8KfheQ9OHLZPHsQOS7x_U_D1vyfU5HE4SgcvFd--3Rk8Kg" style="position: absolute;height: 100px;width: 100px; top: 50%;left:72%;visibility: hidden; "  id="writer1">
 
 <!-- <button type = "button", id ="reader1", name = "read1", class = "btn btn-primary", style="height:5%;width:7%;position:absolute;top:40%;left:20%;font-size:17px">Reader1 </button>
 
