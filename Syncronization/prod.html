@@ -94,42 +94,7 @@ opacity: 1;
   </div>
 
 
-  <div>
-      <form>
-        <textarea id="doc" style="height:40%;width:15%;position:absolute;left:3%;font-size:17px; color :black; background-color:#BDB76B  ;border:solid 2px black; " disabled="">
-while(1)
-  {
-      /* produce an item in next_produced */
-
-      while (counter==BUFFER_SIZE)
-        ; /* do nothing */
-
-      buffer[in] = next_produced;
-      in = (in + 1) % BUFFER_SIZE;
-      counter++;
-  }
-        </textarea>
-      </form>
-    </div>
-
-    <div>
-      <form>
-        <textarea id="doc" style="height:40%;width:15%;position:absolute;right:3%;font-size:17px;color : black; background-color:#BDB76B ;border:solid 2px black; " disabled="">
- while(1)
-  {
-      while(counter == 0)
-        ; /* do nothing */
-
-      next_consumed = buffer[out];
-      out = (out+1) % BUFFER_SIZE;
-      counter--;
-
-      /* consume an item in next_consumed */
-  }
-        </textarea>
-      </form>
-    </div>
-
+  
 
 
 
