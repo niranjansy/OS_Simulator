@@ -52,5 +52,43 @@
                 </ul>
             </div>
         </nav>  
+
+
+        <h1 class="page_title"><b>Disk Scheduling</b></h1>
+        <br><br>
+
+        <div class = "Content">
+            <p>One of the responsibilities of the operating system is to use the hardware efficiently. For the disk drives, meeting this responsibility entails having fast access time and large disk bandwidth. For magnetic disks, the access time has two major components : </p>
+            <ul>
+                <li>The <b>seek time</b> is the time for the disk arm to move the heads to the cylinder containing the desired sector.</li>
+                <li>The <b>rotational latency</b> is the additional time for the disk to rotate the desired sector to the disk head.</li> 
+            </ul>
+            <p>The <b>disk bandwidth</b> is the total number of bytes transferred, divided by the total time between the first request for service and the completion of the last transfer.</p>
+
+            <p>We can improve both the access time and the bandwidth by managing the order in which disk I/O requests are serviced. For a multiprogramming system with many processes, the disk queue may often have several pending requests. Thus, when one request is completed, the operating system chooses which pending request to service next. How does the operating system make this choice? Any one of several disk-scheduling algorithms can be used. </p>
+            <br>
+
+            <h2>FCFS Scheduling</h2>
+            <p>The simplest form of disk scheduling is, of course, the first-come, first-served (FCFS) algorithm. This algorithm is intrinsically fair, but it generally does not provide the fastest service.</p>
+            <br>
+
+            <h2>SSTF Scheduling</h2>
+            <p>It seems reasonable to service all the requests close to the current head position before moving the head far away to service other requests. This assumption is the basis for the shortest-seek-time-first (SSTF) algorithm. The SSTF algorithm selects the request with the least seek time from the current head position. In other words, SSTF chooses the pending request closest to the current head position. However, this form of schedulingmay cause starvation of some requests. Although the SSTF algorithm is a substantial improvement over the FCFS algorithm, it is not optimal.</p>
+            <br>
+
+            <h2>SCAN Scheduling</h2>
+            <p>In the SCAN algorithm, the disk arm starts at one end of the disk and moves toward the other end, servicing requests as it reaches each cylinder, until it gets to the other end of the disk. At the other end, the direction of head movement is reversed, and servicing continues. The head continuously scans back and forth across the disk. The SCAN algorithm is sometimes called the elevator algorithm, since the disk arm behaves just like an elevator in a building, first servicing all the requests going up and then reversing to service requests the other way.</p>
+            <br>
+
+            <h2>C-SCAN Scheduling</h2>
+            <p>Circular SCAN (C-SCAN) scheduling is a variant of SCAN designed to provide a more uniform wait time. Like SCAN, C-SCAN moves the head from one end of the disk to the other, servicing requests along the way. When the head reaches the other end, however, it immediately returns to the beginning of the disk without servicing any requests on the return trip (Figure 10.7). The C-SCAN scheduling algorithm essentially treats the cylinders as a circular list that wraps around from the final cylinder to the first one.</p>
+            <br>
+
+            <h2>LOOK Scheduling</h2>
+            <p>As we described them, both SCAN and C-SCAN move the disk arm across the full width of the disk. In practice, neither algorithm is often implemented this way. More commonly, the arm goes only as far as the final request in each direction. Then, it reverses direction immediately,without going all the way to the end of the disk. Versions of SCAN and C-SCAN that follow this pattern are called LOOK and C-LOOK scheduling, because they look for a request before continuing to move in a given direction</p>
+
+                
+            
+        </div>
     </body>
 </html>
