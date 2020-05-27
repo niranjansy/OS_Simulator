@@ -5,12 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-  <style>
-
+   <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="home.css"> -->
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<style>
 @keyframes FadeOut {
   0% {
     /* position: absolute; */
@@ -36,133 +38,109 @@ opacity: 1;
 }
 </head>
 
-<body style="background-color:#FFE4B5;height:1500px" class="heading">
+<body style="background-color:#f0ffff;height:1000px font:apple-system" class="heading ">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">OS simulator</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li class="active"><a href="#">Wiki</a></li>
-    </ul>
-  </div>
-</nav>
- <br><br><br>
-  <div class="page-header "  >
-    <h1 style="background-color:#CCCC00;float:center"><marquee><b>Barrier Semaphore</b></marquee></h1>      
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="concepts.html">Concepts</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mission
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="prod.html">Producer-Consumer</a>
+                <a class="dropdown-item" href="dining.html">Dining Philosopher</a>
+                <a class="dropdown-item" href="sleeping.html">Reader-Writer</a>
+                <a class="dropdown-item" href="Barrier.html">Barrier Semaphore</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        </nav>
+  <div class="page-header container"  >
+    <h1 style="background-color:#E6E6FA;float:center;text-align: center; font-size:40px;"><b>Barrier Semaphore</b></h1>      
   </div>
  
-<!--  <div >
-     <form>
-      <div class="btn btn-primary" onclick="add()" style ="height:3%;width:5%;position:absolute;">Enter:</div>
-      <input type="number" id="Count"  style="background:white;height:3%;width:5%;position:absolute;left:5%">
-      <p id="tushar"></p>
-     </form>
- </div>
- -->
 
-
-     <div>
-      <form>
-        <textarea id="doc" style="height:46%;width:15%;position:absolute;left:2%;font-size:17px; color : black; background-color:#BDB76B;border:solid 2px black; " disabled="">
-void Barrier
-{
-	while(process_arrived!=0);
-P(S);
-process_arrived++;
-V(S)
-
-  while(process_arrived !=5);
-  P(S);
-  process_left++;
-  if(process_left==5)
-  {
-    process_arrived=0;
-    process_left=0;
-  }
- V(S);
-}
-        </textarea>
-      </form>
-    </div>
-
-
- <button class="btn btn-primary" id ="prod", type ="button", onclick ="barrieradd()", style ="height:10%;width:300px;position:absolute;top:28%;left:20%;border:solid 4px black;font-size:25px">Produce</button>
+ <button class="btn btn-primary" id ="prod", type ="button", onclick ="barrieradd()", style ="height:10%;width:300px;position:absolute;top:48%;left:16%;font-size:25px">Produce</button>
       
-<button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:18%;left:20%;border:solid 4px black;background-color:#E0FFFF;font-size:17px;color : black">Press on Produce </button>
+<button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:38%;left:16%;background-color:#E0FFFF;font-size:17px;color : black">Press on Produce </button>
 
 
-<button class="btn btn-primary" type = "button", id ="cross", name = "cross", onclick="cross()" ,  style="height:10%;width:15%;position:absolute;top:28%;left:50%;border:solid 4px black;font-size:17px" disabled="">Cross the barrier </button>
+<button class="btn btn-primary" type = "button", id ="cross", name = "cross", onclick="cross()" ,  style="height:10%;width:15%;position:absolute;top:48%;left:43%;font-size:17px" disabled="">Cross the barrier </button>
 
-<button class="btn btn-primary" type = "button", id ="num2", name = "num1", onclick ="restart()", style="height:10%;width:300px;position:absolute;top:28%;left:80%;border:solid 4px black;font-size:17px">Restart</button>
-
-
-<!-- 
- <p style="top: 50%;left: 50%; position: absolute;" id="demo">Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p> -->
-
-<!-- <button onclick="myFunction()" class="btn btn-primary" id ="num2" >Click me</button>
- -->
+<button class="btn btn-primary" type = "button", id ="num2", name = "num1", onclick ="restart()", style="height:10%;width:300px;position:absolute;top:48%;left:72%;font-size:17px">Restart</button>
 
 
+<button type = "button", id ="num1", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:38%;left:72%;background-color:#E0FFFF;font-size:17px;color : black">Processes near the barrier : </button>
 
 
-<button type = "button", id ="num1", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:18%;left:80%;border:solid 4px black;background-color:#E0FFFF;font-size:17px;color : black">Processes near the barrier : </button>
+<div type = "button", id ="o11", name = "o11", style="height:10%;width:9%;position:absolute;top:70%;left:16%;background-color:#ffff4d;" > </div>
 
-
-<div type = "button", id ="one1", name = "one1", style="height:10%;width:9%;position:absolute;top:50%;border:solid 4px black;left:20%;background-color:#ff0101;" > </div>
-
-    <div type = "button", id ="two1", name = "two1", style="height:10%;width:9%;position:absolute;top:62%;border:solid 4px black;left:30%;background-color:#ff0101;"> 
+    <div type = "button", id ="t22", name = "t22", style="height:10%;width:9%;position:absolute;top:82%;left:24%;background-color:#ffff4d;"> 
   </div>
     
-    <div type = "button", id ="three1", name = "three1", style="height:10%;width:9%;position:absolute;top:74%;border:solid 4px black;left:15%;background-color:#ff0101;">  </div>
+    <div type = "button", id ="t33", name = "t33", style="height:10%;width:9%;position:absolute;top:94%;left:12%;background-color:#ffff4d;">  </div>
 
   
-    <div type = "button", id ="four1", name = "four1", style="height:10%;width:9%;position:absolute;top:86%;border:solid 4px black;left:39%;background-color:#ff0101;"> </div>
+    <div type = "button", id ="f44", name = "f44", style="height:10%;width:9%;position:absolute;top:106%;left:32%;background-color:#ffff4d;"> </div>
   
-    <div type = "button", id ="five1", name = "five1", style="height:10%;width:9%;position:absolute;top:98%;border:solid 4px black;left:25%;background-color:#ff0101;"></div>
+    <div type = "button", id ="f55", name = "f55", style="height:10%;width:9%;position:absolute;top:118%;left:22%;background-color:#ffff4d;"></div>
 
  
 
 
 
-    <div type = "button", id ="one", name = "one", style="height:10%;width:9%;position:absolute;top:50%;border:solid 4px black;left:45%;background-color:white;visibility:hidden" > </div>
+    <div type = "button", id ="one", name = "one", style="height:10%;width:9%;position:absolute;top:70%;left:36%;background-color:white;visibility:hidden" > </div>
 
-    <div type = "button", id ="two", name = "two", style="height:10%;width:9%;position:absolute;top:62%;border:solid 4px black;left:45%;background-color:white;visibility:hidden"> </div>
+    <div type = "button", id ="two", name = "two", style="height:10%;width:9%;position:absolute;top:82%;left:36%;background-color:white;visibility:hidden"> </div>
   
-    <div type = "button", id ="three", name = "three", style="height:10%;width:9%;position:absolute;top:74%;border:solid 4px black;left:45%;background-color:white;visibility:hidden"></div>
+    <div type = "button", id ="three", name = "three", style="height:10%;width:9%;position:absolute;top:94%;left:36%;background-color:white;visibility:hidden"></div>
   
-    <div type = "button", id ="four", name = "four", style="height:10%;width:9%;position:absolute;top:86%;border:solid 4px black;left:45%;background-color:white;visibility:hidden"> </div>
+    <div type = "button", id ="four", name = "four", style="height:10%;width:9%;position:absolute;top:106%;left:36%;background-color:white;visibility:hidden"> </div>
   
-    <div type = "button", id ="five", name = "five", style="height:10%;width:9%;position:absolute;top:98%;border:solid 4px black;left:45%;background-color:white;visibility:hidden"></div>
+    <div type = "button", id ="five", name = "five", style="height:10%;width:9%;position:absolute;top:118%;left:36%;background-color:white;visibility:hidden"></div>
 
 
 
 
 
-       <div type = "button", id ="one2", name = "one2", style="height:10%;width:9%;position:absolute;top:50%;border:solid 4px black;left:65%;background-color:#02f401;visibility:hidden" > </div>
+       <div type = "button", id ="one2", name = "one2", style="height:10%;width:9%;position:absolute;top:70%;left:56%;background-color:#02f401;visibility:hidden" > </div>
 
-    <div type = "button", id ="two2", name = "two2", style="height:10%;width:9%;position:absolute;top:62%;border:solid 4px black;left:75%;background-color:#02f401;visibility:hidden;"> </div>
+    <div type = "button", id ="two2", name = "two2", style="height:10%;width:9%;position:absolute;top:82%;left:66%;background-color:#02f401;visibility:hidden;"> </div>
   
-    <div type = "button", id ="three2", name = "three2", style="height:10%;width:9%;position:absolute;top:74%;border:solid 4px black;left:60%;background-color:#02f401;visibility:hidden"></div>
+    <div type = "button", id ="three2", name = "three2", style="height:10%;width:9%;position:absolute;top:94%;left:56%;background-color:#02f401;visibility:hidden"></div>
   
-    <div type = "button", id ="four2", name = "four2", style="height:10%;width:9%;position:absolute;top:86%;border:solid 4px black;left:79%;background-color:#02f401;visibility:hidden"> </div>
+    <div type = "button", id ="four2", name = "four2", style="height:10%;width:9%;position:absolute;top:106%;left:68%;background-color:#02f401;visibility:hidden"> </div>
   
-    <div type = "button", id ="five2", name = "five2", style="height:10%;width:9%;position:absolute;top:98%;border:solid 4px black;left:72%;background-color:#02f401;visibility:hidden"></div>
+    <div type = "button", id ="five2", name = "five2", style="height:10%;width:9%;position:absolute;top:118%;left:72%;background-color:#02f401;visibility:hidden"></div>
 <p id="vl" ></p>
-<h1 style="top:40%;left:77%;position: absolute;">After Barrier</h1>
+<h1 style="top:30%;left:77%;position: absolute;">After Barrier</h1>
 
-<h1 style="top:40%;left:54%;position: absolute;">Barrier</h1>
+<h1 style="top:30%;left:47%;position: absolute;">Barrier</h1>
 <style>
 #vl {
-    border-left: 8px solid green;
+    border-left: 6px solid blue;
     height: 70%;
     position: absolute;
-    left: 57%;
+    left: 50%;
     margin-left: -3px;
-    top: 47%;
+    top:67%;
 }
+
 </style>  
 
 </body>
@@ -185,12 +163,12 @@ V(S)
         if(num==0)
         {
 
-                document.getElementById("num").innerHTML ="Chance given to :"+num;
+                document.getElementById("num").innerHTML ="Chance to :"+num;
 
                  document.getElementById("vl").style.visibility = 'visible';
 
                     document.getElementById("one").style.visibility = 'visible';
-                    document.getElementById("one1").style.visibility = 'hidden';
+                    document.getElementById("o11").style.visibility = 'hidden';
                   bar[num]=1;
           document.getElementById("one").style.backgroundColor = '#00BFFF';
         }
@@ -199,7 +177,7 @@ V(S)
                           document.getElementById("num").innerHTML ="Chance given to :"+num;
 
             document.getElementById("two").style.visibility = 'visible';
-                    document.getElementById("two1").style.visibility = 'hidden';
+                    document.getElementById("t22").style.visibility = 'hidden';
                     bar[num]=1;
 
           document.getElementById("two").style.backgroundColor = '#00BFFF';
@@ -209,7 +187,7 @@ V(S)
                           document.getElementById("num").innerHTML ="Chance given to :"+num;
 
             document.getElementById("three").style.visibility = 'visible';
-                    document.getElementById("three1").style.visibility = 'hidden';
+                    document.getElementById("t33").style.visibility = 'hidden';
                     bar[num]=1;
 
           document.getElementById("three").style.backgroundColor = '#00BFFF';
@@ -219,7 +197,7 @@ V(S)
                           document.getElementById("num").innerHTML ="Chance given to :"+num;
 
             document.getElementById("four").style.visibility = 'visible';
-                    document.getElementById("four1").style.visibility = 'hidden';
+                    document.getElementById("f44").style.visibility = 'hidden';
                     bar[num]=1;
 
           document.getElementById("four").style.backgroundColor = '#00BFFF';
@@ -229,7 +207,7 @@ V(S)
                      document.getElementById("num").innerHTML ="Chance given to :"+num;
 
             document.getElementById("five").style.visibility = 'visible';
-                    document.getElementById("five1").style.visibility = 'hidden';
+                    document.getElementById("f55").style.visibility = 'hidden';
                     bar[num]=1;
 
           document.getElementById("five").style.backgroundColor = '#00BFFF';
@@ -242,7 +220,7 @@ V(S)
         }
         if(count<5)
         {
-          document.getElementById("num1").innerHTML ="Processes near the barrier :"+count;
+          document.getElementById("num1").innerHTML ="Total Processes near barrier :"+count;
 
 
                         document.getElementById('cross').disabled=true;
@@ -432,11 +410,11 @@ for(i=0;i<5;i++)
     
 
 
-         document.getElementById("one1").style.visibility = 'visible';
-         document.getElementById("two1").style.visibility = 'visible';
-         document.getElementById("three1").style.visibility = 'visible';
-         document.getElementById("four1").style.visibility = 'visible';
-         document.getElementById("five1").style.visibility = 'visible';
+         document.getElementById("o11").style.visibility = 'visible';
+         document.getElementById("t22").style.visibility = 'visible';
+         document.getElementById("t33").style.visibility = 'visible';
+         document.getElementById("f44").style.visibility = 'visible';
+         document.getElementById("f55").style.visibility = 'visible';
 
          document.getElementById("vl").style.visibility = 'visible';
 
