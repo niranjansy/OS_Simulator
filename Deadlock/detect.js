@@ -4,7 +4,7 @@ var allocationMatrix= [];
 var needMatrix = [];
 var p = [];
 var r = [];
-var vis =[];
+var visited =[];
 var recStack = [];
 var g;
 var q = [];
@@ -107,9 +107,9 @@ class Graph
 
 	isCyclicUtil(v)
 	{
-		if(vis[v] == false)
+		if(visited[v] == false)
 		{
-			vis[v] = true;
+			visited[v] = true;
 			recStack[v] = true;
 			// Recur for all the vertices adjacent to this vertex
 			var get_neighbours = this.AdjList.get(v)
@@ -117,7 +117,7 @@ class Graph
 			{
 				var get_elem = get_neighbours[i];
 				q.push(get_elem);
-				if ( !vis[get_elem] && g.isCyclicUtil(get_elem) )
+				if ( !visited[get_elem] && g.isCyclicUtil(get_elem) )
 				    return true;
 				else if (recStack[get_elem])
 					return true;
@@ -133,7 +133,7 @@ class Graph
 	{
 		for(var i = 0; i < 40; i++)
 		{
-			vis[i] = false;
+			visited[i] = false;
 			recStack[i] = false;
 		}
 		// Call the recursive helper function to detect cycle in different
@@ -241,9 +241,9 @@ function createGraph()
 	{
 		var p1=document.createElement("h5");
 		p1.setAttribute("style","margin-left:20px;font-weight:bold;");
-		p1.textContent=" You are Safe..No Deadlock";
+		p1.textContent="No Deadlock";
 		div.appendChild(p1);
-		console.log("Graph doesn't contain cycle");
+		console.log("Graph doesn't contain a cycle");
 	}
 		
 }
@@ -258,7 +258,7 @@ function clear_data()
 	p=[];
 	r=[];
 	q=[];
-	vis =[];
+	visited =[];
 	recStack = [];
 	//index =0;
 	//numberOfResources =0;
