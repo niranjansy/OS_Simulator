@@ -140,7 +140,7 @@
 
     <div class="container" id="show-button-show">
         <div class="row">
-            <div class="col-xl">
+            <div class="col-lg">
                 <button class="btn btn-warning btn-block" onclick="show_graph_section()">Show Movement of Head</button>
             </div>
         </div>
@@ -153,9 +153,13 @@
     <br><br>
     <div class="container">
         <div id="graph_section">
-            <h2> HEADER MOVEMENT </h2>
-
+            <h2 style="font-weight: bold;"> HEADER MOVEMENT </h2><br>
+            <h3>Total Movement of Head in FCFS:  <span id="fcfsOutput"></span></h3>
+            <h3>Total Movement of Head in SSTF:  <span id="sstfOutput"></span></h3>
+            <h3>Total Movement of Head in SCAN:  <span id="scanOutput"></span></h3>
+            <h3>Total Movement of Head in LOOK:  <span id="lookOutput"></span></h3>
             <br><br>
+            <h2 style="font-weight: bold;"> GRAPHS </h2><br>
             <div class="row">
                 <div class="col-lg">
                     <button class="btn btn-success btn-block" onclick="fcfsModal()" data-toggle="modal">FCFS</button>

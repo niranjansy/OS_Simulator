@@ -11,7 +11,8 @@
 
 
 #graph_section{
-    display:none;
+	display:none;
+	text-align: left;
 }
 
 #show-button-show{

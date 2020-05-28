@@ -24,140 +24,140 @@ function createNewElement() {
 
 var fcfs=0,sstf=0,scan=0,cscan=0,look=0,clook=0;
 
-function optchecked(option)
-{
-	if(option == 0)
-	{
-		fcfs = fcfs+1;
-		//now change the background color to say that it is selected
-		if(fcfs % 2 == 1)
-		{
-			var f1 = document.getElementsByTagName("button")[0];
-			var att = document.createAttribute("class");
-			att.value = "button-checked1";
-			f1.setAttributeNode(att);
-		}
+// function optchecked(option)
+// {
+// 	if(option == 0)
+// 	{
+// 		fcfs = fcfs+1;
+// 		//now change the background color to say that it is selected
+// 		if(fcfs % 2 == 1)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[0];
+// 			var att = document.createAttribute("class");
+// 			att.value = "button-checked1";
+// 			f1.setAttributeNode(att);
+// 		}
 
-		if(fcfs % 2 == 0)
-		{
-			var f1 = document.getElementsByTagName("button")[0];
-			var att = document.createAttribute("class");
-			att.value = "button1";
-			f1.setAttributeNode(att);
-		}
-	}
+// 		if(fcfs % 2 == 0)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[0];
+// 			var att = document.createAttribute("class");
+// 			att.value = "button1";
+// 			f1.setAttributeNode(att);
+// 		}
+// 	}
 
-	if(option == 1)
-	{
-		sstf = sstf+1;
-		if(sstf % 2 ==1)
-		{
-			var f1 = document.getElementsByTagName("button")[1];
-			var att = document.createAttribute("class");
+// 	if(option == 1)
+// 	{
+// 		sstf = sstf+1;
+// 		if(sstf % 2 ==1)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[1];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button-checked2";
-			f1.setAttributeNode(att);
-		}
+// 			att.value = "button-checked2";
+// 			f1.setAttributeNode(att);
+// 		}
 
-		if(sstf % 2 ==0)
-		{
-			var f1 = document.getElementsByTagName("button")[1];
-			var att = document.createAttribute("class");
+// 		if(sstf % 2 ==0)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[1];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button2";
-			f1.setAttributeNode(att);
-		}
-	}
+// 			att.value = "button2";
+// 			f1.setAttributeNode(att);
+// 		}
+// 	}
 
-	if(option == 2)
-	{
-		scan += 1;
-		if(scan % 2 ==1)
-		{
-			var f1 = document.getElementsByTagName("button")[2];
-			var att = document.createAttribute("class");
+// 	if(option == 2)
+// 	{
+// 		scan += 1;
+// 		if(scan % 2 ==1)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[2];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button-checked3";
-			f1.setAttributeNode(att);
-		}
+// 			att.value = "button-checked3";
+// 			f1.setAttributeNode(att);
+// 		}
 
-		if(scan % 2 ==0)
-		{
-			var f1 = document.getElementsByTagName("button")[2];
-			var att = document.createAttribute("class");
+// 		if(scan % 2 ==0)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[2];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button3";
-			f1.setAttributeNode(att);
-		}
-	}
+// 			att.value = "button3";
+// 			f1.setAttributeNode(att);
+// 		}
+// 	}
 
-	if(option == 3)
-	{
-		cscan += 1;
-		if(cscan % 2 ==1)
-		{
-			var f1 = document.getElementsByTagName("button")[3];
-			var att = document.createAttribute("class");
+// 	if(option == 3)
+// 	{
+// 		cscan += 1;
+// 		if(cscan % 2 ==1)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[3];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button-checked4";
-			f1.setAttributeNode(att);
-		}
+// 			att.value = "button-checked4";
+// 			f1.setAttributeNode(att);
+// 		}
 
-		if(cscan % 2 ==0)
-		{
-			var f1 = document.getElementsByTagName("button")[3];
-			var att = document.createAttribute("class");
+// 		if(cscan % 2 ==0)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[3];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button4";
-			f1.setAttributeNode(att);
-		}
-	}
+// 			att.value = "button4";
+// 			f1.setAttributeNode(att);
+// 		}
+// 	}
 
-	if(option == 4)
-	{
-		look += 1;
-		if(look % 2 ==1)
-		{
-			var f1 = document.getElementsByTagName("button")[4];
-			var att = document.createAttribute("class");
+// 	if(option == 4)
+// 	{
+// 		look += 1;
+// 		if(look % 2 ==1)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[4];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button-checked5";
-			f1.setAttributeNode(att);
-		}
+// 			att.value = "button-checked5";
+// 			f1.setAttributeNode(att);
+// 		}
 
-		if(look % 2 ==0)
-		{
-			var f1 = document.getElementsByTagName("button")[4];
-			var att = document.createAttribute("class");
+// 		if(look % 2 ==0)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[4];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button5";
-			f1.setAttributeNode(att);
-		}
-	}
+// 			att.value = "button5";
+// 			f1.setAttributeNode(att);
+// 		}
+// 	}
 
-	if(option == 5)
-	{
-		clook += 1;
-		if(clook % 2 ==1)
-		{
-			var f1 = document.getElementsByTagName("button")[5];
-			var att = document.createAttribute("class");
+// 	if(option == 5)
+// 	{
+// 		clook += 1;
+// 		if(clook % 2 ==1)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[5];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button-checked6";
-			f1.setAttributeNode(att);
-		}
+// 			att.value = "button-checked6";
+// 			f1.setAttributeNode(att);
+// 		}
 
-		if(clook % 2 ==0)
-		{
-			var f1 = document.getElementsByTagName("button")[5];
-			var att = document.createAttribute("class");
+// 		if(clook % 2 ==0)
+// 		{
+// 			var f1 = document.getElementsByTagName("button")[5];
+// 			var att = document.createAttribute("class");
 
-			att.value = "button6";
-			f1.setAttributeNode(att);
-		}
-	}
+// 			att.value = "button6";
+// 			f1.setAttributeNode(att);
+// 		}
+// 	}
 
-}
+// }
 
 function calculate()
 {
@@ -188,11 +188,18 @@ function calculate()
 
 	clookv = calculate_clook();
 
-    var f = document.getElementById("s_graph");
-    var att = document.createAttribute("class");
-    att.value = "s_show";
-    f.setAttributeNode(att);
-	show_graph(fcfsv,sstfv,scanv,cscanv,lookv,clookv);
+	// alert(fcfsv);
+
+	document.getElementById("fcfsOutput").innerHTML = fcfsv;
+	document.getElementById("sstfOutput").innerHTML = sstfv;
+	document.getElementById("scanOutput").innerHTML = scanv;
+	document.getElementById("lookOutput").innerHTML = lookv;
+
+    // var f = document.getElementById("s_graph");
+    // var att = document.createAttribute("class");
+    // att.value = "s_show";
+    // f.setAttributeNode(att);
+	// show_graph(fcfsv,sstfv,scanv,cscanv,lookv,clookv);
 }
 
 function show_graph_section(){
@@ -395,6 +402,7 @@ function calculate_sstf()
 		in_arr.sort(function(a, b){return a - b});
 
 		console.log[in_arr];
+		// alert(in_arr);
 
 		sum = sum + (max - head);
 
@@ -692,34 +700,38 @@ function calculate_sstf()
 	function show_graph(fcfs,sstf,scan,cscan,look,clook)
 	{
 
-		var chart = new CanvasJS.Chart("chartContainer", {
-		title:{
-			text: "RESULTS OF DISK SCHEDULING ALGORITHMS"
-		},
+	// 	var chart = new CanvasJS.Chart("chartContainer", {
+	// 	title:{
+	// 		text: "RESULTS OF DISK SCHEDULING ALGORITHMS"
+	// 	},
 
-		data: [
-		{
-			// Change type to, "line", "splineArea", etc.
-			type: "column",
-			dataPoints: [
-				{ label: "FCFS",  y: fcfs  },
-				{ label: "SSTF", y: sstf  },
-				{ label: "SCAN", y: scan  },
-				{ label: "LOOK",  y: look  },
+	// 	data: [
+	// 	{
+	// 		// Change type to, "line", "splineArea", etc.
+	// 		type: "column",
+	// 		dataPoints: [
+	// 			{ label: "FCFS",  y: fcfs  },
+	// 			{ label: "SSTF", y: sstf  },
+	// 			{ label: "SCAN", y: scan  },
+	// 			{ label: "LOOK",  y: look  },
 
-			]
-		}
-		],
+	// 		]
+	// 	}
+	// 	],
 
-		axisY:{
-			title:"Total Head Movement"
-		},
+	// 	axisY:{
+	// 		title:"Total Head Movement"
+	// 	},
 
-		animationEnabled : true,
-		animationDuration :6000,
-		colorSet: "myColors"
-	});
-	chart.render();
+	// 	animationEnabled : true,
+	// 	animationDuration :6000,
+	// 	colorSet: "myColors"
+	// });
+	// chart.render();
+		document.getElementById("fcfsOutput").innerHTML = fcfs;
+		document.getElementById("sstfOutput").innerHTML = sstf;
+		document.getElementById("scanOutput").innerHTML = scan;
+		document.getElementById("lookOutput").innerHTML = look;
 	}
 
 
