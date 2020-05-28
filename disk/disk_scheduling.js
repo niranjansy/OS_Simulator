@@ -379,7 +379,7 @@ function calculate_sstf()
  		}
 		scan_values.push(head);
 
-		var max = document.getElementsByTagName("input")[2].value;
+		// var max = document.getElementsByTagName("input")[2].value;
 
 		for(var i=3;i<=x;++i)
 		{
@@ -404,12 +404,10 @@ function calculate_sstf()
 		console.log[in_arr];
 		// alert(in_arr);
 
-		sum = sum + (max - head);
-
 		var temp;
 		var i,j,flag=0;
-
-		for(i=in_arr.length-1;i>=0;--i)
+		var size = in_arr.length;
+		for(i=size-1;i>=0;--i)
 		{
 			var p = parseInt(in_arr[i]);
 			if(p < head)
@@ -419,6 +417,11 @@ function calculate_sstf()
 			}
 		}
 
+		if(flag === 0)
+			sum = parseInt(in_arr[size-1]) - head;
+		else
+			sum = max - head;
+
 		var p_i;
 		for(j=flag;j<in_arr.length;++j)
 		{
@@ -427,18 +430,23 @@ function calculate_sstf()
             scan_values.push(p_i);
 		}
 
-		y_i++;
-		scan_values.push(max);
-
-		for(j=flag-1; j>=0 ;--j)
+		
+		if(flag !== 0)
 		{
 			y_i++;
-			p_i = parseInt(in_arr[j]);
-			scan_values.push(p_i);
-		}
+			scan_values.push(max);
 
-		var int = parseInt(in_arr[0]);
-		sum = sum + (max - int);
+			for(j=flag-1; j>=0 ;--j)
+			{
+				y_i++;
+				p_i = parseInt(in_arr[j]);
+				scan_values.push(p_i);
+			}
+
+			var int = parseInt(in_arr[0]);
+			sum = sum + (max - int);
+		}
+		
 
 		// alert(scan_values);
 
@@ -546,7 +554,7 @@ function calculate_sstf()
  			return -10;
  		}
 		look_values.push(head);
-		var max = document.getElementsByTagName("input")[2].value;
+		// var max = document.getElementsByTagName("input")[2].value;
 
 		for(var i=3;i<=x;++i)
 		{
@@ -567,7 +575,7 @@ function calculate_sstf()
 
 		//sort the inputs
 		in_arr.sort(function(a, b){return a - b});
-		in_arr.sort(function(a, b){return a - b});
+		// in_arr.sort(function(a, b){return a - b});
 
 		var i,j,flag=0;
 		for(i=in_arr.length-1;i>=0;--i)
@@ -585,6 +593,11 @@ function calculate_sstf()
 			y_i++;
 			p_i = parseInt(in_arr[j]);
 			look_values.push(p_i);
+			var diff = p_i - head;
+			if(diff < 0)
+				diff = diff * -1;
+			sum += diff;
+			head = p_i;
 		}
 
 		for(j=flag-1; j>=0 ;--j)
@@ -592,14 +605,12 @@ function calculate_sstf()
 			y_i++;
 			p_i = parseInt(in_arr[j]);
 			look_values.push(p_i);
+			var diff = p_i - head;
+			if(diff < 0)
+				diff = diff * -1;
+			sum += diff;
+			head = p_i;
 		}
-
-		var int = parseInt(in_arr[x-3]);	//last element
-		sum = sum + (int - head);
-
-		var int = parseInt(in_arr[x-3]);
-		var int2 = parseInt(in_arr[0]);
-		sum = sum + (int - int2);
 
 		allocate_look();
 		return sum;
