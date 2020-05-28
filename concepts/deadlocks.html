@@ -95,7 +95,7 @@
      	<br>
      	<div>
      		Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.
-			Consider an example when two trains are coming toward each other on same track and there is only one track, none of the trains can move once they are in front of each other. Similar situation occurs in operating systems when there are two or more processes hold some resources and wait for resources held by other(s). For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1.
+			Consider an example when two trains are coming toward each other on same track and there is only one track, none of the trains can move once they are in front of each other. Similar situation occurs in operating systems when there are two or more processes hold some resources and wait for resources held by other(s). For example, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1.
      	</div>
      	<br>
      	<div>
@@ -138,7 +138,7 @@
 				<li><strong>Allocation[n][m]</strong>
 					It's a 2-d integer array of size 'n'*'m' that contains the amount of resources that are currently alloted to the processes.If Allocation[i][j] = k, the i'th process currently has been allocated 'k' instances of the j'th resource.(Note that the indices start at '0' and end at 'n-1' and 'm-1' respectively.)</li>
 			
-				<li>strong>Need[n][m]</strong>It's a 2-d integer array of size 'n'*'m' that contains the amount of resources 		that are currently needed by the processes.If Need[i][j] = k, the i'th process currently needs 'k' instances 	 of the j'th resource for its execution.(Note that the indices start at '0' and end at 'n-1' and 'm-1' respectively.) At any instance, Need[i][j] = Max[i][j] - Allocation[i][j].</li>
+				<li><strong>Need[n][m]</strong>It's a 2-d integer array of size 'n'*'m' that contains the amount of resources 		that are currently needed by the processes.If Need[i][j] = k, the i'th process currently needs 'k' instances 	 of the j'th resource for its execution.(Note that the indices start at '0' and end at 'n-1' and 'm-1' respectively.) At any instance, Need[i][j] = Max[i][j] - Allocation[i][j].</li>
 			</ol>
 		</div>
 		<div>
@@ -224,7 +224,7 @@
 					<li>an arrow going from a resource to a task indicates that the task currently holds the resource.</li>
 				</ol>
 				<br>
-				The alogorithm folows as follows:
+				The algorithm follows as follows:
 				<ol>
 					<li>Make a list of all the nodes, N, from the graph.</li>
 					<li>Pick a node from N. Create another list, L, initially empty, which is used for the graph traversal.</li>
