@@ -52,5 +52,38 @@
                 </ul>
             </div>
         </nav> 
+        <br>
+        <div>
+        	 A process in operating systems uses different resources and uses resources in following way.
+        	 <ul>
+        	 	<li>Requests a resource</li>
+        	 	<li>Use the resource</li>
+        	 	<li>Releases the resource</li>
+        	 </ul>
+        </div>
+     	<br>
+     	<div>
+     		Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.
+			Consider an example when two trains are coming toward each other on same track and there is only one track, none of the trains can move once they are in front of each other. Similar situation occurs in operating systems when there are two or more processes hold some resources and wait for resources held by other(s). For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1.
+     	</div>
+     	<br>
+     	<div>
+     		Deadlock can arise if following four conditions hold simultaneously (Necessary Conditions) 
+     		<ul>
+     			<li><strong>Mutual Exclusion</strong>: One or more than one resource are non-sharable (Only one process can use at a time)</li>
+     			<li><strong>Hold and Wait</strong>: A process is holding at least one resource and waiting for resources.</li>
+     			<li><strong>No Preemption</strong>: A resource cannot be taken from a process unless the process releases the resource.</li>
+     			<li><strong>Circular Wait</strong>: A set of processes are waiting for each other in circular form.</li>
+     		</ul>
+     	</div>
+     	<br>
+     	<div>
+     		Methods for handling deadlock.There are three ways to handle deadlock
+     		<ul>
+     			<li><strong>Deadlock prevention or avoidance</strong>: The idea is to not let the system into deadlock state.</li>
+     			<li><strong>Deadlock detection and recovery</strong>: Let deadlock occur, then do preemption to handle it once occurred.</li>
+     			<li><strong>Ignore the problem all together</strong>: If deadlock is very rare, then let it happen and reboot the system. This is the approach that both Windows and UNIX take.</li>
+     		</ul>
+     	</div>
     </body>
 </html>
