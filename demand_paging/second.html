@@ -64,11 +64,13 @@
 <form>
     <div class"container">
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
-            <input type = "number" id="frames"class="form-control" placeholder="Enter the number of frames:">
+			<p>Enter the number of frames :</p>
+            <input type = "number" id="frames"class="form-control" placeholder="">
         </div>
 
-        <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
-                <input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
+		<div class="form-group row" style="margin-left:40px;width:25vw;display:block">
+			<p>Enter the Reference string: (With spaces in between the page numbers)</p>
+            <input type = "text" id="rs" class="form-control" placeholder="">
         </div>
         <input type = "button" class="compute_button" onclick = "second_chance()" value = "Compute">
 		<div id="div" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
@@ -224,24 +226,25 @@ $tbody = $("<tbody></tbody>");
 	  $table.appendTo($("#div"));
 	  $("#sp1").html('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf+'</span>'+'</p>')
 	  $("#sp2").html('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
-      function getRandomColor() {
-		m=m+1;
-		var color ='';
-		  if(m==1){
-			  color='blue';
-		  }
-		  if(m==2){
-			  color='yellow';
-		  }
-		  if(m==3){
-			  color='pink';
-		  }
-		  if(m==4){
-			  color='white';
-		  }
+      function getRandomColor() 
+		{
+			m = Math.floor(Math.random() * 6);
+			var color ='';
+			if(m==0)
+				color = 'cyan';
+			if(m==1)
+				color='LightBlue';
+			if(m==2)
+				color='yellow';
+			if(m==3)
+				color='pink';
+			if(m==4)
+				color='orange';
+			if(m==5)
+				color = 'lime';
 
-		return color;
-		 }
+			return color;
+		}
 		 console.log(m);
 txt = txt + "\n";
 console.log(txt);

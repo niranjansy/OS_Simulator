@@ -11,7 +11,35 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+        <style>
+        	div{
+        		margin-left: 100px;
+        		margin-right: 100px;
+        	}
+        	h3{
+        		font-weight: bold;
+        		padding: 50px auto;
+        		text-transform: uppercase;
+        	}
+        	h1{
+        		font-weight: bold;
+        		padding: 50px auto;
+        		text-transform: uppercase;
+        	}
+        	body{
+        		font-family: "Times New Roman", Times, serif;
+        	}
+        	hr.new1 {
+  				height: 12px;
+    			border: 0;
+    			box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+			}
+			hr.new2 {
+  				height: 8px;
+    			border: 0;
+    			box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+			}		
+        </style>
     </head>
     <body>
         <!-- Navbar -->
@@ -52,5 +80,161 @@
                 </ul>
             </div>
         </nav> 
+        
+        <br>
+        <div>
+        	<h1>DEADLOCK</h1>
+        	<hr class="new1">
+        	 A process in operating systems uses different resources and uses resources in following way.
+        	 <ol>
+        	 	<li>Requests a resource</li>
+        	 	<li>Use the resource</li>
+        	 	<li>Releases the resource</li>
+        	 </ol>
+        </div>
+     	<br>
+     	<div>
+     		Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.
+			Consider an example when two trains are coming toward each other on same track and there is only one track, none of the trains can move once they are in front of each other. Similar situation occurs in operating systems when there are two or more processes hold some resources and wait for resources held by other(s). For example, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1.
+     	</div>
+     	<br>
+     	<div>
+     		Deadlock can arise if following four conditions hold simultaneously (Necessary Conditions) 
+     		<ol>
+     			<li><strong>Mutual Exclusion</strong>: One or more than one resource are non-sharable (Only one process can use at a time)</li>
+     			<li><strong>Hold and Wait</strong>: A process is holding at least one resource and waiting for resources.</li>
+     			<li><strong>No Preemption</strong>: A resource cannot be taken from a process unless the process releases the resource.</li>
+     			<li><strong>Circular Wait</strong>: A set of processes are waiting for each other in circular form.</li>
+     		</ol>
+     	</div>
+     	<br>
+     	<div>
+     		Methods for handling deadlock.There are three ways to handle deadlock
+     		<ol>
+     			<li><strong>Deadlock prevention or avoidance</strong>: The idea is to not let the system into deadlock state.</li>
+     			<li><strong>Deadlock detection and recovery</strong>: Let deadlock occur, then do preemption to handle it once occurred.</li>
+     			<li><strong>Ignore the problem all together</strong>: If deadlock is very rare, then let it happen and reboot the system. This is the approach that both Windows and UNIX take.</li>
+     		</ol>
+     	</div>
+     	<div>
+     		<hr class="new2">
+     		<h3>BANKER'S ALGORITHM</h3>
+			This is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation of pre-determined maximum possible amounts of all the available resources, and then make a "safe-state" check to test for possible deadlock conditions for all the remaining activities, brefore deciding whether the allocation must be done or not.
+		</div>
+
+		<br>
+
+		<div>
+			We need to have information about the following before checking with bankers algorithm:
+			<br>
+			If 'n' and 'm' are number of processes and the number of types of resources, 
+			<ol>
+				<li><strong>Available[m]</strong>
+					It's a 1-d integer array of size 'm', containing the number of available resources of each of the 'm' types.</li>
+			
+				<li><strong>Max[n][m]</strong>
+					It's a 2-d integer array of size 'n'*'m' that contains the maximum amount of resources that can be alloted to the processes.If Max[i][j] = k, the i'th process can request a maximum of 'k' instances of the j'th resource.(Note that the indices start at '0' and end at 'n-1' and 'm-1' respectively.)</li>
+			
+				<li><strong>Allocation[n][m]</strong>
+					It's a 2-d integer array of size 'n'*'m' that contains the amount of resources that are currently alloted to the processes.If Allocation[i][j] = k, the i'th process currently has been allocated 'k' instances of the j'th resource.(Note that the indices start at '0' and end at 'n-1' and 'm-1' respectively.)</li>
+			
+				<li><strong>Need[n][m]</strong>It's a 2-d integer array of size 'n'*'m' that contains the amount of resources 		that are currently needed by the processes.If Need[i][j] = k, the i'th process currently needs 'k' instances 	 of the j'th resource for its execution.(Note that the indices start at '0' and end at 'n-1' and 'm-1' respectively.) At any instance, Need[i][j] = Max[i][j] - Allocation[i][j].</li>
+			</ol>
+		</div>
+		<div>
+			<hr class="new2">
+		    <h3>SAFETY ALGORITHM</h3>
+			The algorithm for finding out whether or not a system is in a safe state can be described as follows:
+			<br>
+			<ol>
+				<li>
+					Let Work and Finish be arrays of length ‘m’ and ‘n’ respectively.
+					Initialize: Work[i] = Available[i]
+					Finish[i] = false; for i=1, 2, 3, 4…,n
+			    </li>
+				<li>
+					Find an i such that both
+					a) Finish[i] = false
+					b) Needi <= Work 
+					if no such i exists goto step (4)
+				</li>
+				<li>
+					Work = Work + Allocation[i]
+			   		Finish[i] = true
+			   		Add process no.'i' to safe sequence queue. 
+			   		goto step (2)
+			   	</li>
+			   	<li>
+			 		if Finish [i] = true for all i
+			   		then the system is in a safe state
+			   		print safe sequence
+			   </li>
+   			</ol>
+   			<hr class="new2">
+   			<h3>RESOURCE - REQUEST ALGORITHM</h3>
+			Let Requestofi[m] be the request array for i'th process. Requesti[j] = k means i'th process wants 'k' instances of the j'th resource type. When a request for resources is made by the i'th process, the following actions are taken:
+
+			<ol>
+				<li>
+					If Requesti[j] <= Need[i][j] for all j < m,
+   					Goto step (2) ; otherwise, raise an error condition, since the process has exceeded its maximum claim.
+				</li>
+				<li>
+					If Requesti[j] <= Available[i][j] for all j < m,
+   					Goto step (3); otherwise, Process must wait, since the resources are not available.
+				</li>
+				<li>
+					Have the system pretend to have allocated the requested resources to process Pi by modifying the state as follows:
+				    for all j < m
+				    {  
+				     	Available[j] = Available[j] – Requesti[j]
+				     	Allocation[i][j] = Allocation[i][j] + Requesti[j]
+				     	Need[i][j] = Need[i][j] – Requesti[j] 
+   					}
+				</li>
+			</ol>
+
+			<hr class="new2">
+			<h3>LIMITATIONS</h3>
+			<span>
+				The Banker's algorithm has some limitations when implemented. Specifically, it needs to know how much of each resource a process could possibly request. In most systems, this information is unavailable, making it impossible to implement the Banker's algorithm. Also, it is unrealistic to assume that the number of processes is static since in most systems the number of processes varies dynamically. Moreover, the requirement that a process will eventually release all its resources (when the process terminates) is sufficient for the correctness of the algorithm, however it is not sufficient for a practical system. Waiting for hours (or even days) for resources to be released is usually not acceptable.
+			</span>
+			<br>
+		</div>
+		<br>
+		<div>
+			<span>
+				Deadlock is the situation in which multiple concurrent threads of execution in a system are blocked permanently because of resource requirements that can never be satisfied.
+			</span>
+			<br>
+			<span>
+				A typical real-time system has multiple types of resources and multiple concurrent threads of execution contending for these resources. Each thread of execution can acquire multiple resources of various types throughout its lifetime. Potential for deadlocks exist in a system in which the underlying RTOS permits resource sharing among multiple threads of execution.
+			</span>
+			<br>
+			<span>
+				<hr class="new2">
+				<h3>Single-Instance Resource Deadlock Detection</h3>
+				The deadlock detection algorithm for systems with a single instance of each resource type, and tasks making resource requests following the single resource request model, is based on the graph theory. The idea is to find cycles in the resource allocation graph, which represents the circular-wait condition, indicating the existence of deadlocks.
+				<br>
+				The graph has the following properties: 
+				<ol>
+					<li>a circle represents a resource,</li>
+					<li>a square represents a task or thread of execution,</li>
+					<li>an arrow going from a task to a resource indicates that the task wants the resource, and</li>
+					<li>an arrow going from a resource to a task indicates that the task currently holds the resource.</li>
+				</ol>
+				<br>
+				The algorithm follows as follows:
+				<ol>
+					<li>Make a list of all the nodes, N, from the graph.</li>
+					<li>Pick a node from N. Create another list, L, initially empty, which is used for the graph traversal.</li>
+					<li>Insert the node into L and check if this node already exists in L. If so, a cycle exists; therefore, a deadlock is detected, and the algorithm terminates. Otherwise, remove the node from N.</li>
+					<li>Check whether any un-traversed outgoing arcs from this node exist. If all of the arcs are traversed, go to step 6.</li>
+					<li>Choose an un-traversed outgoing arc originating from the node and mark the arc as traversed. Follow the chosen arc to the new node and return to step 3.</li>
+					<li>At this stage, a path in the graph terminates, and no deadlocks exist. If more than one entry is in L, remove the last entry from L. If more than one entry remains in L, make the last entry of L the current node and go to step 4.</li>
+					<li>If the list N is not empty, go to step 2. Otherwise, the algorithm terminates, and no deadlocks exist in the system.</li>
+				</ol>
+			</span>
+		</div>
     </body>
 </html>
