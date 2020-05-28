@@ -37,7 +37,7 @@ This aplication demonstrates the working of a typical Operating System by simula
 
 ## Directions of Use
 
-* To enter into the home page of this simulator, open the `home.html` file within the `home` folder. 
+* To enter into the home page of this simulator, open the `index.html` file in the main folder.
 * To simulate the above mentioned algorithms, scroll down the home page and click on the button corresponding to the desired algorithm. 
 * The `Concepts` tab on the navigation bar has a dropdown list of the above algorithms, which lead to pages containing the theoretical explanations of each algorithm. 
 * The `About` tab on the navigation bar contains information about the developers of this application.
