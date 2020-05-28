@@ -407,7 +407,7 @@ function calculate_sstf()
 		sum = sum + (max - head);
 
 		var temp;
-		var i,j,flag;
+		var i,j,flag=0;
 
 		for(i=in_arr.length-1;i>=0;--i)
 		{
@@ -439,6 +439,8 @@ function calculate_sstf()
 
 		var int = parseInt(in_arr[0]);
 		sum = sum + (max - int);
+
+		// alert(scan_values);
 
 		allocate_scan();
 		return sum;
@@ -567,7 +569,7 @@ function calculate_sstf()
 		in_arr.sort(function(a, b){return a - b});
 		in_arr.sort(function(a, b){return a - b});
 
-		var i,j,flag;
+		var i,j,flag=0;
 		for(i=in_arr.length-1;i>=0;--i)
 		{
 			var p = parseInt(in_arr[i]);
