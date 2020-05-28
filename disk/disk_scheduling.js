@@ -194,6 +194,8 @@ function calculate()
 	document.getElementById("sstfOutput").innerHTML = sstfv;
 	document.getElementById("scanOutput").innerHTML = scanv;
 	document.getElementById("lookOutput").innerHTML = lookv;
+	document.getElementById("cscanOutput").innerHTML = cscanv;
+	document.getElementById("clookOutput").innerHTML = clookv;
 
     // var f = document.getElementById("s_graph");
     // var att = document.createAttribute("class");
@@ -497,12 +499,10 @@ function calculate_sstf()
 		//sort the inputs
 		in_arr.sort(function(a, b){return a - b});
 
-		sum = sum + (max - head);
-
 		var temp;
-		var i,j,flag;
-
-		for(i=in_arr.length-1;i>=0;--i)
+		var i,j,flag=0;
+		var size = in_arr.length;
+		for(i=size-1;i>=0;--i)
 		{
 			var p = parseInt(in_arr[i]);
 			if(p < head)
@@ -513,23 +513,32 @@ function calculate_sstf()
 		}
 
 		var p_i;
-		for(j=flag;j<in_arr.length;++j)
+		
+		for(j=flag;j<size;++j)
 		{
 			y_i++;
 			p_i = parseInt(in_arr[j]);
 			cscan_values.push(p_i);
 		}
-		cscan_values.push(max);
-		for(j=0; j<=flag-1 ;++j)
+		
+		if(flag !== 0)
 		{
-			y_i++;
-			p_i = parseInt(in_arr[j]);
-			cscan_values.push(p_i);
+			sum = (max - head);
+			cscan_values.push(max);
+			cscan_values.push(min);
+			sum = sum + (max - min);
+			for(j=0; j<=flag-1 ;++j)
+			{
+				y_i++;
+				p_i = parseInt(in_arr[j]);
+				cscan_values.push(p_i);
+			}
+			var int = parseInt(in_arr[flag-1]);
+			sum = sum + (int - min);
 		}
-
-		var int = parseInt(in_arr[flag-1]);
-		sum = sum + (int);
-
+		else
+			sum = in_array[size-1] - head;
+	
 		allocate_cscan();
 		return sum;
 	}
@@ -637,7 +646,7 @@ function calculate_sstf()
  		}
 		clook_values.push(head);
 
-		var max = document.getElementsByTagName("input")[2].value;
+		// var max = document.getElementsByTagName("input")[2].value;
 
 		for(var i=3;i<=x;++i)
 		{
@@ -661,12 +670,11 @@ function calculate_sstf()
 
 		var len = in_arr.length-1;
 		var p = parseInt(in_arr[len]);
-		sum = sum + (p - head);
 
 		var temp;
-		var i,j,flag;
+		var i,j,flag=0;
 
-		for(i=in_arr.length-1;i>=0;--i)
+		for(i=len;i>=0;--i)
 		{
 			var p = parseInt(in_arr[i]);
 			if(p < head)
@@ -681,6 +689,11 @@ function calculate_sstf()
 			y_i++;
 			p_i = parseInt(in_arr[j]);
 			clook_values.push(p_i);
+			var diff = p_i - head;
+			if(diff < 0)
+				diff = diff * -1;
+			sum += diff;
+			head = p_i;
 		}
 
 		for(j=0; j<=flag-1 ;++j)
@@ -688,11 +701,12 @@ function calculate_sstf()
 			y_i++;
 			p_i = parseInt(in_arr[j]);
 			clook_values.push(p_i);
+			var diff = p_i - head;
+			if(diff < 0)
+				diff = diff * -1;
+			sum += diff;
+			head = p_i;
 		}
-
-		var int = parseInt(in_arr[flag-1]);
-		var int2 = parseInt(in_arr[0]);
-		sum = sum + (int - int2);
 
 		allocate_clook();
 		return sum;
@@ -745,6 +759,8 @@ function calculate_sstf()
 		document.getElementById("sstfOutput").innerHTML = sstf;
 		document.getElementById("scanOutput").innerHTML = scan;
 		document.getElementById("lookOutput").innerHTML = look;
+		document.getElementById("lookOutput").innerHTML = cscan;
+		document.getElementById("lookOutput").innerHTML = clook;
 	}
 
 

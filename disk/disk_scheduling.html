@@ -158,6 +158,10 @@
             <h3>Total Movement of Head in SSTF:  <span id="sstfOutput"></span></h3>
             <h3>Total Movement of Head in SCAN:  <span id="scanOutput"></span></h3>
             <h3>Total Movement of Head in LOOK:  <span id="lookOutput"></span></h3>
+            <h3>Total Movement of Head in C-SCAN:  <span id="cscanOutput"></span></h3>
+            <h3>Total Movement of Head in C-LOOK:  <span id="clookOutput"></span></h3>
+
+
             <br><br>
             <h2 style="font-weight: bold;"> GRAPHS </h2><br>
             <div class="row">
@@ -179,6 +183,16 @@
                     <button class="btn btn-success btn-block" onclick="lookModal()" data-toggle="modal">LOOK</button>
                 </div>
             </div><br>
+
+            <div class="row">
+                <div class="col-lg">
+                    <button class="btn btn-success btn-block" onclick="cscanModal()" data-toggle="modal">C-SCAN</button>
+                </div>
+    
+                <div class="col-lg">
+                    <button class="btn btn-success btn-block" onclick="clookModal()" data-toggle="modal">C-LOOK</button>
+                </div>
+            </div><br>
             
             <h4 style="font-weight: bold;margin-top:7%;margin-left: 40%;"> X-axis: Cylinder Number</h4>
             <h4 style="font-weight: bold;margin-top:10px;margin-left: 40%;">Y-axis: Request Number</h4>
@@ -194,11 +208,16 @@
     <div id="chartContainer_sstf"></div>
     <div id="chartContainer_scan"></div>
     <div id="chartContainer_look"></div>
+    <div id="chartContainer_cscan"></div>
+    <div id="chartContainer_clook"></div>
+
 
 	<p id="input_fcfs"></p>
 	<p id="input_sstf"></p>
 	<p id="input_scan"></p>
-	<p id="input_look"></p>
+    <p id="input_look"></p>
+    <p id="input_cscan"></p>
+    <p id="input_clook"></p>
     
     <br>
     <br>
