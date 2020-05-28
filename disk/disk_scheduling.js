@@ -537,7 +537,7 @@ function calculate_sstf()
 			sum = sum + (int - min);
 		}
 		else
-			sum = in_array[size-1] - head;
+			sum = in_arr[size-1] - head;
 	
 		allocate_cscan();
 		return sum;
